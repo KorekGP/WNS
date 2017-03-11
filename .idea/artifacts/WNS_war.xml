@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="WNS:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="WNS-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="WNS:war exploded" />
+    </root>
+  </artifact>
+</component>
