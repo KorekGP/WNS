@@ -2,114 +2,64 @@
 
 I do tego responsywnej by na mobilkach była w przyjazny sposób wyświetlana
 
-
-
-Design traktuj typowo jako szkic i został utworzony by Ci ułatwić pracę - mam nadzieję że spełni swoje zadanie.
-
-
+Design traktuj typowo jako szkic i został utworzony by Ci ułatwić pracę -
+mam nadzieję że spełni swoje zadanie.
 
 Strona Candidate View widziałbym jako złożenie kilku elementów
-
-
-
 Strona Startowa (for Eryk design 01.png)
 
-
-
 Desktop:
-
-
-
 Header - oprócz logo WNS możemy tam dodać link do FAQ
-
-
 Pole z mapą oraz miejsce na wyświetlanie spaceru
-
 Obok pole na chat na wzór tego z messengera
-
-
-
 Dodatkowo na polu z mapą zrobilibyśmy box w którym wyświetlałyby się informacje.
-
 Okno z nimi można rozwijać i ukrywać za pomocą przycisku (i)
 
-
-
 Mobilne:
-
-
-
-Na stronę wyświetlamy jednocześnie albo mapę ze spacerem 
-
+Na stronę wyświetlamy jednocześnie albo mapę ze spacerem
 Pod nią informacje
-
-
 
 albo
 
-
-
 Chat podobny do tego z wersji desktopowej
-
-
 Na headerze dodajemy kontrolkę do zmieniania tego co będziemy wyświetlać
 
 
 Header (for Eryk design 02.png)
-
-
 Tu moja luźna propozycja wyglądu headera
-
-Nie dodałem kontrolki do FAQ ale podejrzewam że jeśli byś chciał korzystać z bootstrapa to możemy go umieścić na podobieństwo switch buttona w przypadku wersji mobilnej headera
-
-
+Nie dodałem kontrolki do FAQ ale podejrzewam,
+że jeśli byś chciał korzystać z bootstrapa to możemy go umieścić na
+podobieństwo switch buttona w przypadku wersji mobilnej headera
 
 Mapa startowa (for Eryk design 03.png)
+Na start dostajemy mapę (możemy obadać ten opensourcowy projekt pannellum
+ do wyświetlania interaktywnych zdjęć sferycznych)
+Klikając na odpowiedni budynek oprócz rozpoczęcia spaceru dostajemy przycisk
+(i) (był pokazany na pierwszym png)
 
-
-Na start dostajemy mapę (możemy obadać ten opensourcowy projekt pannellum do wyświetlania interaktywnych zdjęć sferycznych)
-
-Klikając na odpowiedni budynek oprócz rozpoczęcia spaceru dostajemy przycisk (i) (był pokazany na pierwszym png)
-
-Dzięki niemu będziemy mogli sprzedawać informacje kandydatom, które poda nam ta dziewczyna z WNS
-
-
-
-W wersji mobilnej informacje będą wyświetlane poniżej mapy oraz spaceru
-
-Dodatkowo fajnie by było mieć możliwość spacerowania na zewnątrz kampusu aczkolwiek to jest tylko nice to have
-
-
+Dzięki niemu będziemy mogli sprzedawać informacje kandydatom,
+ które poda nam ta dziewczyna z WNS
+W wersji mobilnej informacje będą wyświetlane poniżej
+mapy oraz spaceru. Dodatko
+wo fajnie by było mieć możliwość spacerowania na zewnątrz kampusu aczkolwiek
+to jest tylko nice to have
 
 Spacer (for Eryk design 04.png)
-
-
-
-Tu będziemy musieli po prostu zaimplementować ten opensourcowy projekt albo wykorzystać inne rozwiązanie
-
+Tu będziemy musieli po prostu zaimplementować ten opensourcowy projekt albo
+wykorzystać inne rozwiązanie
 dla desktopu element ten będzie wraz z oknem z informacjami
+Dzięki pannellum możemy umieścić kontrolki na zdjęciu a co za tym
+idzie przenieść kandydata w inne miejsce oraz wyświetlić inne informacjami
 
-Dzięki pannellum możemy umieścić kontrolki na zdjęciu a co za tym idzie przenieść kandydata w inne miejsce oraz wyświetlić inne informacjami
-
-
-Dodatkowo na mobilkach mamy możliwość wykorzystania żyroskopu do manipulowania wyrenderowanym zdjęciem
-
-
+Dodatkowo na mobilkach mamy możliwość wykorzystania żyroskopu do manipulowania
+wyrenderowanym zdjęciem
 
 Chat (for Eryk design 05.png)
-
-
 Dla desktopu będzie to okno na wzór messengera
-
 Pytanie do dyżurującego na które może odpowiedzieć bądź nie
-
-Myślałem by dodać jego avatarek (ale możemy w ogóle z nich nie korzystać zatem pewnie avatarka nie będzie w ogóle)
-
+Myślałem by dodać jego avatarek
+(ale możemy w ogóle z nich nie korzystać zatem pewnie avatarka nie będzie w ogóle)
 
 W mobilnej wersji dodatkowo dodamy w headerze kontrolkę na zmienienie trybu na spacerem
-
-
-
 Jakieś pytania? Coś nie jasne albo z czymś się nie zgadzasz?
-
 Zapraszam do dyskusji :)
