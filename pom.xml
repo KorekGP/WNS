@@ -21,7 +21,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <frontendPath>src\main\resources\static</frontendPath>
+        <frontendPath>src/main/resources/static</frontendPath>
     </properties>
 
     <dependencies>
