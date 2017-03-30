@@ -7,8 +7,8 @@
         "pretest": "webdriver-manager update",
         "test": "protractor ./test/protractor.conf.js",
         "test-server": "http-server dist -p 9000 -a localhost",
-        "start": "webpack-dev-server --config webpack.config.dev.js --inline --hot",
-        "build": "webpack --config webpack.config.prod.js --progress"
+        "start": "webpack-dev-server --config webpack.config.dev.babel.js --inline --hot",
+        "build": "webpack --config webpack.config.prod.babel.js --progress"
     },
     "repository": {
         "type": "git",

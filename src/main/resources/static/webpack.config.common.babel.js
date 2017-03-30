@@ -1,8 +1,8 @@
-const WebpackConfig = require("webpack-config");
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+import WebpackConfig from "webpack-config";
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CleanWebpackPlugin from "clean-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 module.exports = new WebpackConfig().merge({
     output: {
@@ -43,12 +43,14 @@ module.exports = new WebpackConfig().merge({
             dry: false
         }),
         new HtmlWebpackPlugin({
-            title: 'Wydział Nauk Społecznych - Wirtualny spacer',
-            template: 'index.html',
+            title: 'Starter Theme',
+            template: 'index.ejs',
             inject: 'body'
         }),
         new CopyWebpackPlugin([
-            {from: 'index.html', to: 'index.html'}
+            {from: 'index.html', to: 'index.html'},
+            {from: 'service-worker.js', to: 'service-worker.js'},
+            {from: 'manifest.json', to: 'manifest.json'}
         ])
     ]
 });
