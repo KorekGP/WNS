@@ -1,0 +1,17 @@
+$color-secondary-light: #59edff;
+$color-secondary: #06a8bb;
+
+$color-primary-light: #4d7Fb4;
+$color-primary: #0b5ed7;
+$color-primary-darker: #013066;
+
+$color-accent: #493548;
+$color-accent: #8d3b72;
+
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+$default-transition: 0.35s;
