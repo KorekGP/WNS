@@ -1,24 +1,21 @@
-import WebpackConfig from "webpack-config";
-import path from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import CleanWebpackPlugin from "clean-webpack-plugin";
-import CopyWebpackPlugin from "copy-webpack-plugin";
+import Config from 'webpack-config';
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-module.exports = new WebpackConfig().merge({
+module.exports = new Config().merge({
     output: {
         path: path.join(__dirname, '/dist'),
         filename: 'bundle.js'
     },
-    context: path.join(__dirname, '/app'),
+    context: path.join(__dirname, '/src'),
     module: {
-        preLoaders: [
-            {
-                test: /\.js$/,
-                loader: 'eslint-loader',
-                exclude: /(node_modules)/
-            }
-        ],
         loaders: [{
+            test: /\.js$/,
+            loader: 'eslint-loader',
+            exclude: /(node_modules)/
+        }, {
             test: /\.scss$/,
             loader: 'style!css?sourceMap!sass?sourceMap&sourceComments'
         }, {
@@ -29,12 +26,15 @@ module.exports = new WebpackConfig().merge({
             loader: 'json-loader'
         }, {
             test: /\.html$/,
-            loader: 'ng-cache?prefix=[dir]/[dir]'
+            loader: 'ng-cache-loader?prefix=[dir]/[dir]'
         }, {
             test: /\.js$/,
-            loader: 'babel?presets[]=es2015',
+            loader: 'babel-loader?presets[]=es2015',
             exclude: /node_modules/
         }]
+    },
+    resolve: {
+        extensions: ['.js', '.scss', '.html']
     },
     plugins: [
         new CleanWebpackPlugin(['dist'], {
@@ -43,14 +43,13 @@ module.exports = new WebpackConfig().merge({
             dry: false
         }),
         new HtmlWebpackPlugin({
-            title: 'Starter Theme',
-            template: 'index.ejs',
+            title: 'Wydział Nauk Społecznych - Wirtualny spacer',
+            template: 'index.html',
             inject: 'body'
         }),
-        new CopyWebpackPlugin([
-            {from: 'index.html', to: 'index.html'},
-            {from: 'service-worker.js', to: 'service-worker.js'},
-            {from: 'manifest.json', to: 'manifest.json'}
-        ])
+        new CopyWebpackPlugin([{
+            from: 'index.html',
+            to: 'index.html'
+        }])
     ]
 });
