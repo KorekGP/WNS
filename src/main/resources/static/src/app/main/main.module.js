@@ -6,12 +6,25 @@ import appChat from './chat/chat.component';
 import appTour from './tour/tour.component';
 import appTourInfo from './tour/tour-info/tour-info.component';
 
+function appRoutes($stateProvider, $urlRouterProvider) {
+    'use strict';
+    $urlRouterProvider.when('', '/app');
+    $urlRouterProvider.when('/', '/app');
+
+    $stateProvider.state('app', {
+        url: '/app',
+        component: 'appMain'
+    });
+}
+
+
 const mainModule = 'app.main';
 
 angular.module(mainModule, [])
     .component('appMain', appMain)
     .component('appChat', appChat)
     .component('appTour', appTour)
-    .component('appTourInfo', appTourInfo);
+    .component('appTourInfo', appTourInfo)
+    .config(appRoutes);
 
 export default mainModule;

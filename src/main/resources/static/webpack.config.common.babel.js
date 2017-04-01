@@ -3,29 +3,21 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 module.exports = new Config().merge({
     output: {
-        path: path.join(__dirname, '/dist'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, '/dist')
     },
     context: path.join(__dirname, '/src'),
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
             enforce: 'pre',
             loader: 'eslint-loader',
             exclude: /(node_modules)/
         }, {
-            test: /\.scss$/,
-            loader: 'style-loader!css-loader?sourceMap!sass-loader?sourceMap&sourceComments'
-        }, {
             test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
             loader: 'url-loader?limit=300'
-        }, {
-            test: /\.json$/,
-            loader: 'json-loader'
         }, {
             test: /\.html$/,
             loader: 'ng-cache-loader?prefix=[dir]/[dir]'
@@ -36,9 +28,11 @@ module.exports = new Config().merge({
         }]
     },
     resolve: {
-        extensions: ['.js', '.scss', '.html']
+        extensions: ['.js', '.scss', '.html', '.css']
     },
     plugins: [
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.ProgressPlugin(),
         new CleanWebpackPlugin(['dist'], {
             root: __dirname,
             verbose: true,
@@ -47,6 +41,7 @@ module.exports = new Config().merge({
         new HtmlWebpackPlugin({
             title: 'Wydział Nauk Społecznych - Wirtualny spacer',
             template: 'index.ejs',
+            favicon: 'favicon.ico',
             inject: 'body'
         }),
         new webpack.LoaderOptionsPlugin({

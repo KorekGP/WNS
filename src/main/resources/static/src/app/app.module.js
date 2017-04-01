@@ -6,27 +6,21 @@ import appHeader from './header/header.component';
 import appFooter from './footer/footer.component';
 import appAdmin from './admin/admin.component';
 import mainModule from './main/main.module';
+import ngAnimate from 'angular-animate';
+import ngTouch from 'angular-touch';
 
-function appRoutes($stateProvider, $urlRouterProvider) {
-    'use strict';
-    $urlRouterProvider.when('', '/app');
-    $urlRouterProvider.when('/', '/app');
-
-    $stateProvider.state('app', {
-        url: '/app',
-        component: 'app'
-    });
-
+function init() {
     moment.locale('pl-PL');
-
 }
 
 export default angular.module('app', [
     uiRouter,
+    ngAnimate,
+    ngTouch,
     mainModule
 ])
     .component('appRoot', appRoot)
     .component('appHeader', appHeader)
     .component('appFooter', appFooter)
     .component('appAdmin', appAdmin)
-    .config(appRoutes);
+    .run(init);
