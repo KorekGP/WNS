@@ -1,20 +1,25 @@
-import webpack from 'webpack';
 import Config from 'webpack-config';
+import webpack from 'webpack';
 
-module.exports = new Config()
+export default new Config()
     .extend('./webpack.config.common.babel.js')
     .merge({
         output: {
             pathinfo: true
         },
-        debug: true,
         devtool: '#eval',
         entry: {
             bundle: './app/app.module.js',
             vendor: ['angular', 'angular-ui-router'],
         },
         plugins: [
-            new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
+            new webpack.LoaderOptionsPlugin({
+                debug: true
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                filename: 'vendor.bundle.js'
+            })
         ]
     });
 

@@ -22,10 +22,11 @@ function appRoutes($stateProvider, $urlRouterProvider) {
 }
 
 export default angular.module('app', [
-    uiRouter, mainModule
+    uiRouter,
+    mainModule
 ])
-    .config(appRoutes)
     .component('appRoot', appRoot)
     .component('appHeader', appHeader)
     .component('appFooter', appFooter)
-    .component('appAdmin', appAdmin);
+    .component('appAdmin', appAdmin)
+    .config(appRoutes);
