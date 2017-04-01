@@ -1,5 +1,6 @@
 import Config from 'webpack-config';
 import path from 'path';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -13,11 +14,12 @@ module.exports = new Config().merge({
     module: {
         loaders: [{
             test: /\.js$/,
+            enforce: 'pre',
             loader: 'eslint-loader',
             exclude: /(node_modules)/
         }, {
             test: /\.scss$/,
-            loader: 'style!css?sourceMap!sass?sourceMap&sourceComments'
+            loader: 'style-loader!css-loader?sourceMap!sass-loader?sourceMap&sourceComments'
         }, {
             test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
             loader: 'url-loader?limit=300'
@@ -44,12 +46,18 @@ module.exports = new Config().merge({
         }),
         new HtmlWebpackPlugin({
             title: 'Wydział Nauk Społecznych - Wirtualny spacer',
-            template: 'index.html',
+            template: 'index.ejs',
             inject: 'body'
         }),
-        new CopyWebpackPlugin([{
-            from: 'index.html',
-            to: 'index.html'
-        }])
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                eslint: {
+                    failOnWarning: false,
+                    failOnError: false,
+                    fix: false,
+                    quiet: false,
+                },
+            },
+        }),
     ]
 });
