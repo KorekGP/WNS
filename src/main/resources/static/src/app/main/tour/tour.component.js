@@ -4,6 +4,10 @@
 import tourHtml from './tour.component.html';
 import './tour.component.scss';
 
+class TourController {
+}
+
 export default {
-    template: tourHtml
+    template: tourHtml,
+    controller: TourController
 };

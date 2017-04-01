@@ -1,3 +1,50 @@
-header {
+@import "../../variables";
 
+nav.navbar {
+    background: $color-primary;
+}
+
+ .navbar-header  .navbar-brand {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+.navbar.navbar-default .navbar-brand:hover {
+    color: $anchor-focus;
+}
+
+nav.navbar-default {
+    border-color: $color-primary-light !important;
+}
+
+nav.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+header {
+    width: 100%;
+}
+
+header > img {
+    width: 100%;
+    margin-top: 3%;
+}
+
+li > a > i.fa {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+li > a > span {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (min-height: $screen-sm-min) {
+    nav.navbar ul > li > a {
+        float: left;
+    }
 }

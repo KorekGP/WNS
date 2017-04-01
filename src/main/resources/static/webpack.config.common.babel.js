@@ -17,7 +17,7 @@ module.exports = new Config().merge({
             exclude: /(node_modules)/
         }, {
             test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
-            loader: 'url-loader?limit=300'
+            loader: 'url-loader?limit=10000'
         }, {
             test: /\.html$/,
             loader: 'ng-cache-loader?prefix=[dir]/[dir]'

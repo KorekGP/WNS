@@ -1,3 +1,15 @@
-footer {
+@import "../../variables";
 
+footer {
+    background-color: $color-accent;
 }
+
+.row > .col-xs-12 {
+    text-align: center;
+}
+
+.row h4 {
+    color: #fff;
+}
+
+
