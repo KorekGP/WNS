@@ -23,7 +23,7 @@ public class Book {
     }
 
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<Author> authors;
+    private List<Description> descriptions;
 
  public void setPagesNo(Integer pagesNo) {
         this.pagesNo = pagesNo;
