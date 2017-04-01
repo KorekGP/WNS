@@ -8,14 +8,14 @@
 /node_modules
 
 # IDEs and editors
-/.idea
+.idea/
 .project
 .classpath
 .c9/
 *.launch
 .settings/
 temp.json
-
+node
 src/assets/img
 src/assets/patterns
 # IDE - VSCode

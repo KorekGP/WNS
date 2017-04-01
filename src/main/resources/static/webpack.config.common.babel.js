@@ -6,7 +6,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 module.exports = new Config().merge({
     output: {
-        path: path.join(__dirname, '/dist')
+        path: path.join(__dirname, '../public')
     },
     context: path.join(__dirname, '/src'),
     module: {
@@ -33,8 +33,8 @@ module.exports = new Config().merge({
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.ProgressPlugin(),
-        new CleanWebpackPlugin(['dist'], {
-            root: __dirname,
+        new CleanWebpackPlugin(['public'], {
+            root: path.join(process.cwd(), '..'),
             verbose: true,
             dry: false
         }),
@@ -51,8 +51,8 @@ module.exports = new Config().merge({
                     failOnError: false,
                     fix: false,
                     quiet: false,
-                },
-            },
+                }
+            }
         }),
     ]
 });
