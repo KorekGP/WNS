@@ -64,8 +64,8 @@ module.exports = new Config().extend('./webpack.config.common.babel.js').merge({
             ]
         }),
         new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: 'production'
+            'process': {
+                WNS_PRODUCTION_ENVIRONMENT: true
             }
         }),
         new ExtractTextPlugin('[name].[hash].css')

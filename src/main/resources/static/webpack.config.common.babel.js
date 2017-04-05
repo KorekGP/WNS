@@ -53,6 +53,6 @@ module.exports = new Config().merge({
                     quiet: false,
                 }
             }
-        }),
+        })
     ]
 });

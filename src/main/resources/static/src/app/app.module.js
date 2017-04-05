@@ -16,7 +16,7 @@ function init() {
 }
 
 function config($compileProvider) {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.WNS_PRODUCTION_ENVIRONMENT) {
         $compileProvider.debugInfoEnabled(false);
         $compileProvider.commentDirectivesEnabled(false);
         $compileProvider.cssClassDirectivesEnabled(false);

@@ -8,7 +8,7 @@ export default new Config()
             pathinfo: true,
             filename: 'bundle.js'
         },
-        devtool: '#eval',
+        devtool: 'source-map',
         entry: {
             bundle: './index.js',
             vendor: [
@@ -52,7 +52,12 @@ export default new Config()
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'vendor',
                 filename: 'vendor.bundle.js'
-            })
+            }),
+            new webpack.DefinePlugin({
+                'process': {
+                    WNS_PRODUCTION_ENVIRONMENT: false
+                }
+            }),
         ]
     });
 
