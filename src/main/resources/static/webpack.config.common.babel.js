@@ -10,12 +10,14 @@ module.exports = new Config().merge({
     },
     context: path.join(__dirname, '/src'),
     module: {
-        rules: [{
-            test: /\.js$/,
-            enforce: 'pre',
-            loader: 'eslint-loader',
-            exclude: /(node_modules)/
-        }, {
+        rules: [
+        //     {
+        //     test: /\.js$/,
+        //     enforce: 'pre',
+        //     loader: 'eslint-loader',
+        //     exclude: /(node_modules)/
+        // },
+            {
             test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
             loader: 'url-loader?limit=10000'
         }, {
@@ -44,15 +46,15 @@ module.exports = new Config().merge({
             favicon: 'favicon.ico',
             inject: 'body'
         }),
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                eslint: {
-                    failOnWarning: false,
-                    failOnError: false,
-                    fix: false,
-                    quiet: false,
-                }
-            }
-        })
+        // new webpack.LoaderOptionsPlugin({
+        //     options: {
+        //         eslint: {
+        //             failOnWarning: false,
+        //             failOnError: false,
+        //             fix: false,
+        //             quiet: true,
+        //         }
+        //     }
+        // })
     ]
 });
