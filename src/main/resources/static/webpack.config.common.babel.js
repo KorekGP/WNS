@@ -11,23 +11,23 @@ module.exports = new Config().merge({
     context: path.join(__dirname, '/src'),
     module: {
         rules: [
-        //     {
-        //     test: /\.js$/,
-        //     enforce: 'pre',
-        //     loader: 'eslint-loader',
-        //     exclude: /(node_modules)/
-        // },
+            //     {
+            //     test: /\.js$/,
+            //     enforce: 'pre',
+            //     loader: 'eslint-loader',
+            //     exclude: /(node_modules)/
+            // },
             {
-            test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
-            loader: 'url-loader?limit=10000'
-        }, {
-            test: /\.html$/,
-            loader: 'ng-cache-loader?prefix=[dir]/[dir]'
-        }, {
-            test: /\.js$/,
-            loader: 'babel-loader?presets[]=es2015',
-            exclude: /node_modules/
-        }]
+                test: /\.(eot|woff|woff2|ttf|png|svg|jpg)$/,
+                loader: 'url-loader?limit=10000'
+            }, {
+                test: /\.html$/,
+                loader: 'ng-cache-loader?prefix=[dir]/[dir]'
+            }, {
+                test: /\.js$/,
+                loader: 'babel-loader?presets[]=es2015',
+                exclude: /node_modules/
+            }]
     },
     resolve: {
         extensions: ['.js', '.scss', '.html', '.css']

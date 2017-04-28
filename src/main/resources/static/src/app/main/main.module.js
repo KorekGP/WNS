@@ -5,7 +5,7 @@ import appMain from './main.component';
 import appChat from './chat/chat.component';
 import appTour from './tour/tour.component';
 import appTourInfo from './tour/tour-info/tour-info.component';
-import appDescription from './description/description.component'
+import appDescription from './description/description.component';
 
 function appRoutes($stateProvider, $urlRouterProvider) {
     'use strict';

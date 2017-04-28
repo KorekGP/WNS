@@ -4,12 +4,10 @@ nav.navbar {
     background: $color-primary;
 }
 
- .navbar-header  .navbar-brand {
+.navbar-header .navbar-brand {
     color: #fff;
     font-weight: bold;
 }
-
-
 
 .navbar.navbar-default .navbar-brand:hover {
     color: $anchor-focus;
