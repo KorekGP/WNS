@@ -27,29 +27,15 @@
         <spring.version>4.3.7.RELEASE</spring.version>
         <java.version>1.7</java.version>
         <jackson.version>2.8.7</jackson.version>
-        <war.plugin>3.0.0</war.plugin>
         <junit.version>4.12</junit.version>
         <pgsql.version>9.4-1200-jdbc41</pgsql.version>
         <projectlombock.version>1.16.8</projectlombock.version>
         <hibernate.version>5.2.9.Final</hibernate.version>
         <spring.data.jpa.version>1.11.1.RELEASE</spring.data.jpa.version>
-        <swagger.version>2.6.1</swagger.version>
     </properties>
 
 
     <dependencies>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>${swagger.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
-            <scope>compile</scope>
-        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -230,11 +216,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${war.plugin}</version>
             </plugin>
         </plugins>
     </build>
