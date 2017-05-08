@@ -6,8 +6,8 @@
   "license": "ISC",
   "scripts": {
     "pretest": "webdriver-manager update",
-    "test": "protractor ./test/protractor.conf.js",
-    "test-server": "http-server dist -p 9000 -a localhost",
+    "test-e2e": "protractor ./test/protractor.conf.js",
+    "test": "cross-env NODE_ENV=test babel-node --presets es2015 -- ./node_modules/karma/bin/karma start karma.conf.js",
     "start": "webpack-dev-server --config webpack.config.dev.babel.js --inline --hot --port 4200",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.babel.js --progress",
     "dev": "webpack --watch --config webpack.config.dev.babel.js --progress"
@@ -39,6 +39,7 @@
     "moment": "^2.18.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
@@ -53,6 +54,10 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-webpack": "^2.0.3",
     "ng-annotate-loader": "0.2.0",
     "ng-annotate-webpack-plugin": "^0.2.1-pre",
     "ng-cache-loader": "0.0.23",

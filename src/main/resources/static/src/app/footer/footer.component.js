@@ -3,7 +3,23 @@
  */
 import footerHtml from './footer.component.html';
 import './footer.component.scss';
+import
+
+class FooterController {
+
+    constructor($uibModal) {
+        this.$uibModal = $uibModal;
+    }
+
+    openLoginModal() {
+        this.$uibModal.open();
+    }
+
+
+}
 
 export default {
+    controller: FooterController,
+    controllerAs: 'footerCtrl',
     template: footerHtml,
 };

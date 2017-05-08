@@ -2,22 +2,9 @@
  * Created by eryk on 02.04.17.
  */
 import appAdmin from './admin.component';
-import appLogin from './login/login.component';
+import appLogin from '../footer/login/login.component';
+import commonModule from '../common/common.module';
 
-function appRoutes($stateProvider) {
-    'use strict';
-
-    $stateProvider.state('login', {
-        url: '/login',
-        component: 'appLogin'
-    });
-}
-
-const adminModule = 'app.admin';
-
-angular.module(adminModule, [])
+export default angular.module('app.admin', [commonModule])
     .component('appLogin', appLogin)
-    .component('appAdmin', appAdmin)
-    .config(appRoutes);
-
-export default adminModule;
+    .component('appAdmin', appAdmin).name;
