@@ -1,0 +1,9 @@
+<app-modal-header title="{{modal.title}}" close="modal.modalInstance.close()"></app-modal-header>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <div ng-transclude="myModalBody"></div>
+    </form>
+</div>
+<div class="modal-footer">
+    <div ng-transclude="myModalFooter"></div>
+</div>

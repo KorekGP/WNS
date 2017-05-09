@@ -1,5 +1,5 @@
 var Config = require('webpack-config').Config;
-import webpack from 'webpack';
+var webpack = require('webpack');
 
 module.exports = new Config()
     .extend('./webpack.config.common.babel.js')
@@ -8,13 +8,9 @@ module.exports = new Config()
             pathinfo: true,
             filename: 'bundle.js'
         },
-        devtool: 'source-map',
+        devtool: 'inline-source-map',
         entry: {
-            bundle: './index.js',
-            vendor: [
-                'angular',
-                'angular-ui-router'
-            ]
+            bundle: './index.js'
         },
         module: {
             rules: [{
@@ -44,15 +40,6 @@ module.exports = new Config()
                     }
                 }]
             }]
-        },
-        plugins: [
-            new webpack.LoaderOptionsPlugin({
-                debug: true
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor',
-                filename: 'vendor.bundle.js'
-            })
-        ]
+        }
     });
 

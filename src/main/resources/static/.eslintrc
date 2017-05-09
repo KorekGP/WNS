@@ -15,7 +15,14 @@
     },
     "globals": {
         "angular": false,
-        "$": false
+        "$": false,
+        "describe": false,
+        "fdescribe": false,
+        "it": false,
+        "fit": false,
+        "inject": false,
+        "beforeEach": false,
+        "expect": false
     },
     "rules": {
         "angular/module-getter": 1,

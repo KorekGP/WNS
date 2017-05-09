@@ -13,7 +13,7 @@ class LoginController {
     }
 
     login() {
-
+        // TODO
     }
 
 }
@@ -21,6 +21,6 @@ class LoginController {
 
 export default {
     controller: LoginController,
-    controllerAs: 'loginController',
+    controllerAs: 'modal',
     template: loginHtml,
 };

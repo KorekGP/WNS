@@ -2,7 +2,7 @@
  * Created by eryk on 28.04.17.
  */
 
-describe('footer-component', () => {
+describe('login-modal', () => {
     let $componentController;
 
     beforeEach(angular.mock.module('app.footer'));
@@ -11,8 +11,7 @@ describe('footer-component', () => {
     }));
 
     it('should open login modal', function () {
-        const ctrl = $componentController('appFooter');
-        ctrl.openLoginModal()
+        const ctrl = $componentController('appLoginModal');
     });
 
 });

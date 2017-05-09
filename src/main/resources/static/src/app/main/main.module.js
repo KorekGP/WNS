@@ -6,7 +6,7 @@ import appChat from './chat/chat.component';
 import appTour from './tour/tour.component';
 import appTourInfo from './tour/tour-info/tour-info.component';
 import appDescription from './description/description.component';
-import appFaq from './FAQ/faq.component';
+import uiRouter from '@uirouter/angularjs';
 
 function appRoutes($stateProvider, $urlRouterProvider) {
     'use strict';
@@ -19,15 +19,12 @@ function appRoutes($stateProvider, $urlRouterProvider) {
     });
 }
 
-
-const mainModule = 'app.main';
-
-angular.module(mainModule, [])
+export default angular.module('app.main', [
+    uiRouter,
+])
     .component('appMain', appMain)
     .component('appChat', appChat)
     .component('appTour', appTour)
     .component('appDescription', appDescription)
     .component('appTourInfo', appTourInfo)
-    .config(appRoutes);
-
-export default mainModule;
+    .config(appRoutes).name;

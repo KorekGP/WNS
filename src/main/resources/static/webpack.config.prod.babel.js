@@ -1,13 +1,13 @@
-import webpack from 'webpack';
-import Config from 'webpack-config';
-import path from 'path';
-import NgAnnotatePlugin from 'ng-annotate-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+var Config = require('webpack-config').Config;
+var webpack = require('webpack');
+var path = require('path');
+var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const nodeModules = path.join(process.cwd(), 'node_modules');
 
 module.exports = new Config().extend('./webpack.config.common.babel.js').merge({
-    entry: './index.js',
+    entry: './index.prod.js',
     output: {
         pathinfo: true,
         filename: '[name].[hash].js'
@@ -62,11 +62,6 @@ module.exports = new Config().extend('./webpack.config.common.babel.js').merge({
             chunks: [
                 'main'
             ]
-        }),
-        new webpack.DefinePlugin({
-            'process': {
-                WNS_PRODUCTION_ENVIRONMENT: true
-            }
         }),
         new ExtractTextPlugin('[name].[hash].css')
     ]

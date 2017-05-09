@@ -4,7 +4,7 @@
 
 const API_URL = 'localhost:8080/api/';
 
-export default class ApiConfigurationService {
+class ApiConfigurationService {
 
     constructUrl(serviceUrl, endpointUrl) {
         let resultUrl = API_URL + (serviceUrl || '') + '/' + (endpointUrl || '');
@@ -15,3 +15,7 @@ export default class ApiConfigurationService {
     }
 
 }
+
+export default function () {
+    return new ApiConfigurationService()
+};

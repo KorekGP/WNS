@@ -1,9 +1,12 @@
 const path = require('path');
-const webpackConfig = require('./webpack.config.dev.babel');
+const webpackConfig = require('./webpack.config.test');
 const karmaWebpack = require('karma-webpack');
-const entry = './src/index.js';
+
+const entry = './src/test.js';
 const testPath = 'src/app/**/*.spec.js';
+
 const webpackPreprocessor = ['webpack'];
+
 const preprocessors = {};
 preprocessors[entry] = webpackPreprocessor;
 preprocessors[testPath] = webpackPreprocessor;
@@ -16,10 +19,10 @@ module.exports = function (config) {
 
         frameworks: ['jasmine'],
 
-        // list of files / img to load in the browser
+        // list of files/img to load in the browser
         files: [
             entry,
-            testPath
+            testPath,
         ],
 
         webpack: webpackConfig,

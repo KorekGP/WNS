@@ -1,8 +1,8 @@
-import Config from 'webpack-config';
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+var Config = require('webpack-config').Config;
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
+var webpack = require('webpack');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = new Config().merge({
     output: {

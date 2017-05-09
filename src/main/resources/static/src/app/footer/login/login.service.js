@@ -1,9 +1,14 @@
 /**
  * Created by eryk on 28.04.17.
  */
-export default class loginService {
+class LoginService {
 
-    constructor(ApiConfigurationService, $http) {
-
+    constructor(apiConfigurationService, $http) {
+        this.apiConfigurationService = apiConfigurationService;
+        this.$http = $http;
     }
+}
+
+export default function (apiConfigurationService, $http) {
+    return new LoginService(apiConfigurationService, $http);
 }

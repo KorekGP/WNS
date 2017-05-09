@@ -3,7 +3,6 @@
  */
 import footerHtml from './footer.component.html';
 import './footer.component.scss';
-import
 
 class FooterController {
 
@@ -12,9 +11,10 @@ class FooterController {
     }
 
     openLoginModal() {
-        this.$uibModal.open();
+        this.$uibModal.open({
+            component: 'appLoginModal',
+        });
     }
-
 
 }
 
