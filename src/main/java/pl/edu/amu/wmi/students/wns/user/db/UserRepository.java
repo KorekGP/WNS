@@ -1,9 +1,9 @@
-package wmi.students.db;
+package pl.edu.amu.wmi.students.wns.user.db;
 
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
-import wmi.students.model.User;
+import pl.edu.amu.wmi.students.wns.user.model.User;
 
 /**
  * Created by Grzegorz on 2016-04-19.

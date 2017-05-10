@@ -1,8 +1,8 @@
-package wmi.students.db;
+package pl.edu.amu.wmi.students.wns.db;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
-import wmi.students.model.Description;
+import pl.edu.amu.wmi.students.wns.model.Description;
 
 /**
  * Created by Grzegorz on 2016-03-25.
@@ -11,6 +11,7 @@ import wmi.students.model.Description;
 public interface DescriptionRepository extends PagingAndSortingRepository<Description, Long> {
 
     Description findById(Long id);
+
     Description findByRoomName(String surname);
 
 }

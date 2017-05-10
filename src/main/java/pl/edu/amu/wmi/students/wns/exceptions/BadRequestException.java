@@ -1,4 +1,4 @@
-package wmi.students.exceptions;
+package pl.edu.amu.wmi.students.wns.exceptions;
 
 /**
  * Created by Grzegorz on 2016-05-28.

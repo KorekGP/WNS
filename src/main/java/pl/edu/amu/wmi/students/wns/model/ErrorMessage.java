@@ -1,4 +1,4 @@
-package wmi.students.model;
+package pl.edu.amu.wmi.students.wns.model;
 
 /**
  * Created by infokomes on 24.05.16.

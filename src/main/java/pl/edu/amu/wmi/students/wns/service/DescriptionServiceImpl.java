@@ -1,11 +1,11 @@
-package wmi.students.service;
+package pl.edu.amu.wmi.students.wns.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import wmi.students.db.DescriptionRepository;
-import wmi.students.model.Description;
+import pl.edu.amu.wmi.students.wns.db.DescriptionRepository;
+import pl.edu.amu.wmi.students.wns.model.Description;
 
 import java.util.List;
 
@@ -27,17 +27,17 @@ public class DescriptionServiceImpl {
         return descriptionRepository.findByRoomName(roomName);
     }
 
-    public ResponseEntity addDescription(Description description){
+    public ResponseEntity addDescription(Description description) {
         descriptionRepository.save(description);
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    public ResponseEntity deleteDescription(Description description){
+    public ResponseEntity deleteDescription(Description description) {
         descriptionRepository.delete(description);
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    public Description editDescription(Description description){
+    public Description editDescription(Description description) {
         return descriptionRepository.save(description);
     }
 

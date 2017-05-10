@@ -1,4 +1,4 @@
-package wmi.students.exceptions;
+package pl.edu.amu.wmi.students.wns.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -16,7 +16,7 @@ public class Exceptions {
     @ExceptionHandler({NotFoundException.class})
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
-    public String handleNotFoundException(NotFoundException exception){
+    public String handleNotFoundException(NotFoundException exception) {
         return "STATUS 404 NOT FOUND <br><br>"
                 + exception.getUserMessage();
     }
@@ -24,7 +24,7 @@ public class Exceptions {
     @ExceptionHandler({BadRequestException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    public String handleBadRequestException(BadRequestException exception){
+    public String handleBadRequestException(BadRequestException exception) {
         return "STATUS 400 BAD REQUEST <br><br>"
                 + exception.getUserMessage();
     }
@@ -32,7 +32,7 @@ public class Exceptions {
     @ExceptionHandler({ConflictException.class})
     @ResponseStatus(HttpStatus.CONFLICT)
     @ResponseBody
-    public String handleConflictException(ConflictException exception){
+    public String handleConflictException(ConflictException exception) {
         return "STATUS 409 CONFLICT <br><br>"
                 + exception.getUserMessage();
     }

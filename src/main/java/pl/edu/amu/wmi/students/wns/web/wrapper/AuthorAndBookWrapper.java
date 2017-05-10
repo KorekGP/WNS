@@ -1,4 +1,4 @@
-package wmi.students.web.wrapper;
+package pl.edu.amu.wmi.students.wns.web.wrapper;
 
 /**
  * Created by Grzegorz on 2016-04-13.
