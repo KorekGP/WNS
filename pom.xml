@@ -32,6 +32,9 @@
         <projectlombock.version>1.16.8</projectlombock.version>
         <hibernate.version>5.2.9.Final</hibernate.version>
         <spring.data.jpa.version>1.11.1.RELEASE</spring.data.jpa.version>
+        <jwt.version>1.0.7.RELEASE</jwt.version>
+        <oauth.version>2.1.0.RELEASE</oauth.version>
+        <flyway.version>4.2.0</flyway.version>
     </properties>
 
 
@@ -162,6 +165,30 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-hibernate4</artifactId>
             <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+            <version>${jwt.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>${oauth.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
         </dependency>
 
         <dependency>

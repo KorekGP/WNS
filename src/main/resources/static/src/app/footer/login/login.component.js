@@ -13,7 +13,7 @@ class LoginController {
     }
 
     login() {
-        // TODO
+        this.loginService.login()
     }
 
 }
