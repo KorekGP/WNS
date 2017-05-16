@@ -1,7 +1,7 @@
-<form class="form-horizontal" ng-submit="modal.login()">
+<form class="form-horizontal">
     <div class="form-group">
         <div class="col-xs-12">
-            <input ng-model="loginController.credentials.username"
+            <input ng-model="modal.credentials.username"
                    id="username"
                    name="username"
                    class="form-control"
@@ -13,7 +13,7 @@
 
     <div class="form-group">
         <div class="col-xs-12 col-sm-12 no-padding">
-            <input ng-model="loginController.credentials.password"
+            <input ng-model="modal.credentials.password"
                    id="password"
                    name="password"
                    type="{{modal.passwordSwitch && 'password' || 'text' }}"
@@ -23,7 +23,7 @@
         </div>
         <div class="visible-xs col-xs-2 no-padding">
             <i class="fa fa-2x fa-search m-t-xs"
-               ng-click="modal.passwordSwitch = !modal.passwordSwitch"></i>
+               ng-click="modal.switchPassword()"></i>
         </div>
     </div>
 </form>

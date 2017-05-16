@@ -7,19 +7,21 @@ import './login.component.scss';
 class LoginController {
 
     constructor(loginService) {
-        this.credentials = {};
         this.loginService = loginService;
         this.passwordSwitch = true;
     }
 
-    login() {
-        // TODO
+    switchPassword() {
+        this.passwordSwitch = !this.passwordSwitch;
     }
 
 }
 
 
 export default {
+    bindings: {
+        credentials: '<'
+    },
     controller: LoginController,
     controllerAs: 'modal',
     template: loginHtml,

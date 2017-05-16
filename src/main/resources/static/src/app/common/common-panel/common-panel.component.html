@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2>{{panel.title}}</h2>
-                <hr class="light">
+                <hr class="{{panel.inverse && 'light' || 'dark'}}">
             </div>
             <ng-transclude></ng-transclude>
         </div>

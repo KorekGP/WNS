@@ -1,0 +1,23 @@
+@import '../../../../variables';
+
+$grid-height: 700px;
+$grid-width: 810px;
+
+.ag-grid-style {
+    height: $grid-height;
+    width: $grid-width;
+}
+
+@media (min-width: $screen-lg-min) {
+    .center-part-1 {
+        float: left;
+        position: relative;
+        left: 50%;
+    }
+
+    .center-part-2 {
+        float: left;
+        position: relative;
+        left: -50%;
+    }
+}

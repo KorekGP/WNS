@@ -14,7 +14,8 @@ class CommonPanelController {
 export default {
     bindings: {
         title: '@',
-        id: '@?'
+        id: '@?',
+        inverse: '=?'
     },
     controller: CommonPanelController,
     controllerAs: 'panel',

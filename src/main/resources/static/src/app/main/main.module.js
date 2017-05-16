@@ -18,6 +18,7 @@ function appRoutes($stateProvider, $urlRouterProvider) {
         url: '/app',
         component: 'appMain'
     });
+
 }
 
 export default angular.module('app.main', [

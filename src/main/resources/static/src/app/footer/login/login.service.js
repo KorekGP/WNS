@@ -3,12 +3,11 @@
  */
 class LoginService {
 
-    constructor(apiConfigurationService, $http) {
-        this.apiConfigurationService = apiConfigurationService;
+    constructor($http) {
         this.$http = $http;
     }
 }
 
-export default function (apiConfigurationService, $http) {
-    return new LoginService(apiConfigurationService, $http);
+export default function ($http) {
+    return new LoginService($http);
 }

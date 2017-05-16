@@ -8,6 +8,7 @@ export default [
     },
     {
         headerName: 'Rola',
+        field: 'userRole',
         valueGetter: (params) => {
             if (params.data.userRole === 'ADMIN') {
                 return 'Administrator'
@@ -21,6 +22,7 @@ export default [
     },
     {
         headerName: 'Aktywny',
+        field: 'enabled',
         valueGetter: (params) => {
             if (params.data.enabled) {
                 return 'Tak'
