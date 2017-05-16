@@ -3,5 +3,9 @@
  */
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
+
+import agGrid from 'ag-grid';
+agGrid.initialiseAgGridWithAngular1(angular);
+
 import './app/app.module';
 import './styles.scss';

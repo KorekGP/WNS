@@ -7,6 +7,7 @@ import mainModule from './main/main.module';
 import adminModule from './admin/admin.module';
 import ngAnimate from 'angular-animate';
 import ngTouch from 'angular-touch';
+import ngResource from 'angular-resource';
 import uiBootstrapCollapse from 'angular-ui-bootstrap/src/collapse';
 import footerModule from './footer/footer.module';
 
@@ -17,6 +18,7 @@ function init() {
 export default angular.module('app', [
     ngAnimate,
     ngTouch,
+    ngResource,
     uiBootstrapCollapse,
     mainModule,
     adminModule,

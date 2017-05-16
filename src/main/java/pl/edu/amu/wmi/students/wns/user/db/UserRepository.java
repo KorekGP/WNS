@@ -12,5 +12,5 @@ import pl.edu.amu.wmi.students.wns.user.model.User;
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
     User findByEmail(String email);
 
-    User findByLogin(String login);
+    User findByUsername(String username);
 }

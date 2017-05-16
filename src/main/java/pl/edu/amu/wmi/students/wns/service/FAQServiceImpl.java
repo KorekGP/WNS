@@ -1,9 +1,9 @@
-package wmi.students.service;
+package pl.edu.amu.wmi.students.wns.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import wmi.students.db.FAQRepository;
-import wmi.students.model.FAQ;
+import pl.edu.amu.wmi.students.wns.db.FAQRepository;
+import pl.edu.amu.wmi.students.wns.model.FAQ;
 
 import java.util.List;
 

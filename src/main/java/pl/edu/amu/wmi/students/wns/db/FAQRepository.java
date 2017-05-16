@@ -1,8 +1,8 @@
-package wmi.students.db;
+package pl.edu.amu.wmi.students.wns.db;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
-import wmi.students.model.FAQ;
+import pl.edu.amu.wmi.students.wns.model.FAQ;
 
 import java.util.List;
 

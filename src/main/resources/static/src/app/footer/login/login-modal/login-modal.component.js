@@ -5,12 +5,16 @@
  * Created by eryk on 31.03.17.
  */
 import html from './login-modal.component.html';
-import './login.component.scss';
+import '../login.component.scss';
 
 class LoginModalController {
 
     constructor() {
         //
+    }
+
+    login() {
+
     }
 
 }

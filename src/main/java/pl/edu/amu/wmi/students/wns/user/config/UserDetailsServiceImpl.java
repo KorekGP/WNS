@@ -21,8 +21,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional(readOnly = true)
-    public UserDetails loadUserByUsername(String login) {
-        User user = userService.findByLogin(login);
+    public UserDetails loadUserByUsername(String username) {
+        User user = userService.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("Nie ma takiego użytkownika");
         }

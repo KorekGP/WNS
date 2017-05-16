@@ -3,8 +3,19 @@
  */
 import appAdmin from './admin.component';
 import commonModule from '../common/common.module';
+import userGridWrapper from './user-grid-wrapper/user-grid-wrapper.component';
+import userGrid from './user-grid-wrapper/user-grid/user-grid.component';
+import userModal from './user-grid-wrapper/user-modal/user-modal.component';
+import userGridColumn from './user-grid-wrapper/user-grid/user-grid-column.constant';
+const agGridModule = 'agGrid';
 
 export default angular.module('app.admin', [
-    commonModule
+    commonModule,
+    agGridModule
 ])
-    .component('appAdmin', appAdmin).name;
+    .component('appAdmin', appAdmin)
+    .component('appUserGridWrapper', userGridWrapper)
+    .component('appUserGrid', userGrid)
+    .component('appUserModal', userModal)
+    .constant('userGridColumn', userGridColumn)
+    .name;

@@ -3,8 +3,9 @@
  */
 import acs from './service/ApiConfigurationService';
 import commonModal from './modal/common-modal.module';
+import commonPanel from '../common/common-panel/common-panel.component';
 
 export default angular.module('app.common', [
     commonModal
 ])
-    .factory('apiConfigurationService', acs).name;
+    .component('appCommonPanel', commonPanel).name;

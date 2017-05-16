@@ -1,4 +1,4 @@
-package wmi.students.model;
+package pl.edu.amu.wmi.students.wns.model;
 
 import lombok.Data;
 

@@ -37,8 +37,8 @@ public class UserServiceImpl {
         return userRepository.findByEmail(email);
     }
 
-    public User findByLogin(String login) {
-        return userRepository.findByLogin(login);
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
     public List<User> findAll() {
@@ -46,7 +46,7 @@ public class UserServiceImpl {
     }
 
     public User addUser(User user) {
-        if (findByEmail(user.getEmail()) != null || findByLogin(user.getUsername()) != null) {
+        if (findByEmail(user.getEmail()) != null || findByUsername(user.getUsername()) != null) {
             return null;
         }
         userRepository.save(user);
@@ -76,14 +76,11 @@ public class UserServiceImpl {
         return userRepository.save(user);
     }
 
-    public boolean update(User updatedUser) {
-        if (updatedUser == null || updatedUser.getUserId() == null) {
-            LOGGER.error("Aktualizacja użytkownika nie zawiera id");
-            return false;
-        }
+    public boolean update(User updatedUser, int userId) {
+        updatedUser.setUserId(userId);
         User user = findById(updatedUser.getUserId());
         if (user == null || !user.isEnabled()) {
-            LOGGER.error("Użytownik jest już aktywowany lub nie istnieje");
+            LOGGER.error("Użytownik jest nieaktywowany lub nie istnieje");
             return false;
         }
         user.setEmail(updatedUser.getEmail());

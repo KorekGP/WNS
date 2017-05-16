@@ -18,4 +18,5 @@ export default {
     controller: ModalBodyController,
     controllerAs: 'modal',
     template: html,
+    transclude: true
 };

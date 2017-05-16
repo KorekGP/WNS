@@ -12,8 +12,7 @@ module.exports = new Config()
         entry: {
             bundle: './index.js',
             vendor: [
-                'angular',
-                'angular-ui-router'
+                'angular'
             ]
         },
         module: {

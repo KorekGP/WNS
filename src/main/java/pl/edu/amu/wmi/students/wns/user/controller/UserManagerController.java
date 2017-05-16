@@ -13,10 +13,11 @@ import pl.edu.amu.wmi.students.wns.user.model.User;
 import java.util.List;
 
 /**
- * Created by eryk on 10.05.17.
+ * WNS Created by eryk on 10.05.17.
  */
-@PreAuthorize("@hasRole('ADMIN')")
+//@PreAuthorize("@hasRole('ADMIN')")
 @RestController
+@RequestMapping("/user")
 public class UserManagerController {
 
     private UserServiceImpl userService;
@@ -26,7 +27,7 @@ public class UserManagerController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/user/{userId}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{userId}")
     public ResponseEntity disableUser(@PathVariable("userId") int userId) {
         if (userService.disable(userId)) {
             return new ResponseEntity(HttpStatus.OK);
@@ -34,9 +35,9 @@ public class UserManagerController {
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/user")
-    public ResponseEntity editUser(@RequestBody User user) throws NotFoundException {
-        if (userService.update(user)) {
+    @RequestMapping(method = RequestMethod.PUT, value = "/{userId}")
+    public ResponseEntity editUser(@RequestBody User user, @PathVariable("userId") int userId) throws NotFoundException {
+        if (userService.update(user, userId)) {
             return new ResponseEntity(HttpStatus.OK);
         }
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
@@ -50,8 +51,8 @@ public class UserManagerController {
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/user")
-    public ResponseEntity<User> addUser(@RequestBody User user) throws NotFoundException {
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<User> addUser(@RequestBody User user) {
         User addedUser = userService.addUser(user);
         if (addedUser == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -60,9 +61,14 @@ public class UserManagerController {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/user")
+    @RequestMapping(method = RequestMethod.GET)
     public List<User> getUsers() {
         return userService.findAll();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/{userId}")
+    public User getUserById(@PathVariable int userId) {
+        return userService.findById(userId);
     }
 
 

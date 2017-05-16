@@ -7,6 +7,7 @@ import appTour from './tour/tour.component';
 import appTourInfo from './tour/tour-info/tour-info.component';
 import appDescription from './description/description.component';
 import uiRouter from '@uirouter/angularjs';
+import commonModule from '../common/common.module';
 
 function appRoutes($stateProvider, $urlRouterProvider) {
     'use strict';
@@ -21,6 +22,7 @@ function appRoutes($stateProvider, $urlRouterProvider) {
 
 export default angular.module('app.main', [
     uiRouter,
+    commonModule
 ])
     .component('appMain', appMain)
     .component('appChat', appChat)

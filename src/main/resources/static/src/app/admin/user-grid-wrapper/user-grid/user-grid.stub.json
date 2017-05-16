@@ -1,0 +1,16 @@
+[
+    {
+        "userId": 0,
+        "username": "eryk",
+        "email": "eryk@eryk.pl",
+        "enabled": true,
+        "userRole": "ADMIN"
+    },
+    {
+        "userId": 1,
+        "username": "korek",
+        "email": "korek@korek.pl",
+        "enabled": false,
+        "userRole": "GUIDE"
+    }
+]

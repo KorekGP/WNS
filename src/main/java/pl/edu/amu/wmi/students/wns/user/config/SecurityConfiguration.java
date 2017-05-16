@@ -36,15 +36,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) {
         try {
             httpSecurity
-                    .formLogin()
-                    .loginProcessingUrl("/login")
-                    .usernameParameter("username")
-                    .passwordParameter("password")
-                    .permitAll()
-                    .and()
-                    .logout()
-                    .logoutUrl("/logout")
-                    .permitAll();
+                    .csrf().disable()
+                    .authorizeRequests()
+                    .antMatchers("/**").permitAll();
 
         } catch (Exception e) {
             LOGGER.error("Błąd podczas konfiguracji autoryzowanych stron", e);

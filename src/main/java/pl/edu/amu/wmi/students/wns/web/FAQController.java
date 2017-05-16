@@ -1,11 +1,11 @@
-package wmi.students.web;
+package pl.edu.amu.wmi.students.wns.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import wmi.students.model.FAQ;
-import wmi.students.service.FAQServiceImpl;
+import pl.edu.amu.wmi.students.wns.model.FAQ;
+import pl.edu.amu.wmi.students.wns.service.FAQServiceImpl;
 
 import java.util.List;
 
