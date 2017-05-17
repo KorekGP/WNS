@@ -1,23 +1,40 @@
 @import '../../../../variables';
+@import '../../../../styles';
 
-$grid-height: 700px;
+$grid-height: 600px;
 $grid-width: 810px;
+$body-margin: 60px;
+
+.ag-grid-wrapper {
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    text-align: center;
+}
 
 .ag-grid-style {
     height: $grid-height;
-    width: $grid-width;
 }
 
-@media (min-width: $screen-lg-min) {
-    .center-part-1 {
-        float: left;
-        position: relative;
-        left: 50%;
-    }
-
-    .center-part-2 {
-        float: left;
-        position: relative;
-        left: -50%;
-    }
+.ag-header-viewport {
+    //background: #fff;
+    //@extend .m
 }
+
+.ag-header-cell {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.ag-header-cell, .ag-cell {
+    border-collapse: separate;
+    border: solid 1px;
+    border-color: #ddd rgb(231, 231, 231) rgb(221, 221, 221) rgb(231, 231, 231);
+}
+
+.ag-body {
+    top: $body-margin !important;
+}
+
+

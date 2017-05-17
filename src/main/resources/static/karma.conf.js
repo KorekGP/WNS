@@ -5,7 +5,7 @@ const karmaWebpack = require('karma-webpack');
 const entry = './src/test.js';
 const testPath = 'src/app/**/*.spec.js';
 
-const webpackPreprocessor = ['webpack'];
+const webpackPreprocessor = ['webpack', 'sourcemap'];
 
 const preprocessors = {};
 preprocessors[entry] = webpackPreprocessor;
@@ -34,10 +34,6 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: preprocessors,
 
-        ngHtml2JsPreprocessor: {
-            moduleName: 'templates'
-        },
-
         reporters: ['progress'],
 
         // web server port
@@ -62,8 +58,7 @@ module.exports = function (config) {
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: false,
         plguins: [
-            karmaWebpack,
-            'karma-ng-html2js-preprocessor'
+            karmaWebpack
         ]
     });
 };

@@ -1,5 +1,4 @@
 import angular from 'angular';
-import * as moment from 'moment';
 import appRoot from './app.component';
 import appHeader from './header/header.component';
 import mainModule from './main/main.module';
@@ -11,10 +10,6 @@ import uiBootstrapCollapse from 'angular-ui-bootstrap/src/collapse';
 import footerModule from './footer/footer.module';
 import faqModule from './main/faq/faq.module';
 import tourGuideModule from './main/tour/tour-guide/tour-guide.module';
-
-function init() {
-    moment.locale('pl-PL');
-}
 
 export default angular.module('app', [
     ngAnimate,
@@ -28,5 +23,4 @@ export default angular.module('app', [
     tourGuideModule
 ])
     .component('appRoot', appRoot)
-    .component('appHeader', appHeader)
-    .run(init);
+    .component('appHeader', appHeader);

@@ -2,12 +2,12 @@
  * Created by eryk on 31.03.17.
  */
 import appMain from './main.component';
-import appChat from './chat/chat.component';
 import appTour from './tour/tour.component';
 import appTourInfo from './tour/tour-info/tour-info.component';
 import appDescription from './description/description.component';
 import uiRouter from '@uirouter/angularjs';
 import commonModule from '../common/common.module';
+import chatModule from './chat/chat.module';
 
 function appRoutes($stateProvider, $urlRouterProvider) {
     'use strict';
@@ -23,10 +23,10 @@ function appRoutes($stateProvider, $urlRouterProvider) {
 
 export default angular.module('app.main', [
     uiRouter,
-    commonModule
+    commonModule,
+    chatModule
 ])
     .component('appMain', appMain)
-    .component('appChat', appChat)
     .component('appTour', appTour)
     .component('appDescription', appDescription)
     .component('appTourInfo', appTourInfo)

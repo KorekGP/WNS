@@ -9,6 +9,7 @@ export default [
     {
         headerName: 'Rola',
         field: 'userRole',
+        minWidth: 30,
         valueGetter: (params) => {
             if (params.data.userRole === 'ADMIN') {
                 return 'Administrator'
@@ -18,11 +19,13 @@ export default [
     },
     {
         headerName: 'Adres e-mail',
-        field: 'email'
+        field: 'email',
+        minWidth: 30,
     },
     {
         headerName: 'Aktywny',
         field: 'enabled',
+        minWidth: 30,
         valueGetter: (params) => {
             if (params.data.enabled) {
                 return 'Tak'
