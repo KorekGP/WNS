@@ -10,6 +10,7 @@ import ngResource from 'angular-resource';
 import uiBootstrapCollapse from 'angular-ui-bootstrap/src/collapse';
 import footerModule from './footer/footer.module';
 import faqModule from './main/faq/faq.module';
+import tourGuideModule from './main/tour/tour-guide/tour-guide.module';
 
 function init() {
     moment.locale('pl-PL');
@@ -23,7 +24,8 @@ export default angular.module('app', [
     mainModule,
     adminModule,
     footerModule,
-    faqModule
+    faqModule,
+    tourGuideModule
 ])
     .component('appRoot', appRoot)
     .component('appHeader', appHeader)

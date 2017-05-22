@@ -1,0 +1,61 @@
+.div-images {
+    text-align: center;
+}
+
+.images {
+    width: 20%;
+    height: 500px;
+}
+
+.back {
+    cursor: pointer;
+    position: absolute;
+    margin-top: 7%;
+    left: 0;
+}
+
+.forward {
+    cursor: pointer;
+    position: absolute;
+    margin-top: -20%;
+    right: 0;
+}
+
+.tooltiptest {
+    position: absolute;
+    top: 30%;
+    right: 41%;
+    display: inline-block;
+}
+
+.tooltiptest .tooltiptexttest {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    transition: opacity 1s;
+}
+
+.tooltiptest .tooltiptexttest::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltiptest:hover .tooltiptexttest {
+    visibility: visible;
+    opacity: 1;
+}

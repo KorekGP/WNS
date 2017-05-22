@@ -1,0 +1,12 @@
+<div>
+    <img ng-if="!tourGuideCtrl.previousEmpty" class="back" ng-click="tourGuideCtrl.previosIndex()"
+         src="../../../images/back.png">
+    <div class="div-images">
+        <img class="images" ng-src="{{tourGuideCtrl.slides[tourGuideCtrl.index].image}}">
+    </div>
+    <div class="glyphicon glyphicon-info-sign tooltiptest">
+        <span class="tooltiptexttest">{{tourGuideCtrl.slides[tourGuideCtrl.index].description}}</span>
+    </div>
+    <img ng-if="!tourGuideCtrl.nextEmpty" class="forward" ng-click="tourGuideCtrl.nextIndex()"
+         src="../../../images/forward.png">
+</div>

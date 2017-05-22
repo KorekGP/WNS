@@ -14,7 +14,7 @@
         <div uib-collapse="$ctrl.navCollapsed" class="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#">
+                    <a id="chat" ng-click="headerCtrl.openChat()">
                         <i class="fa fa-2x fa-comment"></i>
                         <span>Czat</span>
                     </a>
@@ -30,3 +30,6 @@
 <header>
     <img src="{{$ctrl.headerPath}}">
 </header>
+<div ng-if="headerCtrl.chat" ng-class="{chat: popup-box-on}">
+    <app-chat></app-chat>
+</div>

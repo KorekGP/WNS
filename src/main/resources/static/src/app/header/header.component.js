@@ -8,12 +8,18 @@ import './header.component.scss';
 class HeaderController {
 
     constructor() {
+        this.chat = false;
         this.navCollapsed = true;
         this.headerPath = headerPath;
+    }
+
+    openChat() {
+        this.chat = this.chat === false;
     }
 }
 
 export default {
     template: headerHtml,
-    controller: HeaderController
+    controller: HeaderController,
+    controllerAs: 'headerCtrl',
 };
