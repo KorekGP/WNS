@@ -24,7 +24,4 @@ public class Description {
     @NotNull
     private String roomName;
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
