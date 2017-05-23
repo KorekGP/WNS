@@ -8,6 +8,7 @@ import tourGuide from './tour-guide.component';
 import commonModule from '../../../common/common.module';
 import tourComponent from './tour-guide.component';
 
+
 function appRoutes($stateProvider) {
     $stateProvider.state('tourGuide', {
         url: '/tourGuide?buildingID',
