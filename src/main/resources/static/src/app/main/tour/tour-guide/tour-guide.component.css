@@ -21,14 +21,13 @@
     right: 0;
 }
 
-.tooltiptest {
+.room-tooltip {
     position: absolute;
     top: 30%;
     right: 41%;
-    display: inline-block;
 }
 
-.tooltiptest .tooltiptexttest {
+.room-tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -44,7 +43,7 @@
     transition: opacity 1s;
 }
 
-.tooltiptest .tooltiptexttest::after {
+.room-tooltip .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -55,7 +54,7 @@
     border-color: #555 transparent transparent transparent;
 }
 
-.tooltiptest:hover .tooltiptexttest {
+.room-tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }

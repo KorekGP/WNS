@@ -4,8 +4,8 @@
     <div class="div-images">
         <img class="images" ng-src="{{tourGuideCtrl.slides[tourGuideCtrl.index].image}}">
     </div>
-    <div class="glyphicon glyphicon-info-sign tooltiptest">
-        <span class="tooltiptexttest">{{tourGuideCtrl.slides[tourGuideCtrl.index].description}}</span>
+    <div class="glyphicon glyphicon-info-sign room-tooltip">
+        <span class="tooltiptext">{{tourGuideCtrl.slides[tourGuideCtrl.index].description}}</span>
     </div>
     <img ng-if="!tourGuideCtrl.nextEmpty" class="forward" ng-click="tourGuideCtrl.nextIndex()"
          src="../../../images/forward.png">
