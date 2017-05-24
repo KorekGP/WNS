@@ -46,6 +46,9 @@ module.exports = new Config().merge({
             favicon: 'favicon.ico',
             inject: 'body'
         }),
+        new webpack.ProvidePlugin({
+            moment: 'moment'
+        })
         // new webpack.LoaderOptionsPlugin({
         //     options: {
         //         eslint: {

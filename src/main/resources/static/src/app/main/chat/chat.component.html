@@ -1,9 +1,9 @@
 <div class="chat-window">
     <div class="chatbox">
-        <div ng-repeat="message in chatCtrl.messages">
+        <div ng-repeat="message in chatCtrl.messages" class="chat-message">
             {{message.content}}
         </div>
     </div>
-    <input type="text" ng-model="chatCtrl.content">
-    <input type="submit" value="Wyślij" ng-click="chatCtrl.sendMessage()">
+    <input type="text" ng-model="chatCtrl.content" class="chat-textbox">
+    <input type="submit" value="WYŚLIJ" ng-click="chatCtrl.sendMessage()" class="chat-button">
 </div>
