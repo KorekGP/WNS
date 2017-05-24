@@ -4,7 +4,7 @@
 import tourGuideHtml from './tour-guide.component.html';
 import './tour-guide.component.css';
 import uiRouter from '@uirouter/angularjs';
-
+import imgPath1 from '../../../images/01a_1.jpg';
 
 
 class TourGuideController {
@@ -15,7 +15,7 @@ class TourGuideController {
 
         if (this.buildingID == 1) {
             this.slides = [
-                {image: 'src/app/images/01a_1.jpg', description: 'Image 00'},
+                {image: imgPath1, description: 'Image 00'},
                 {image: 'src/app/images/02aa_1.jpg', description: 'Image 01'},
                 {image: 'src/app/images/02bb_1.jpg', description: 'Image 02'},
                 {image: 'src/app/images/03a_1.jpg', description: 'Image 03'},

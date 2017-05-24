@@ -6,21 +6,22 @@ import './chat.component.scss';
 
 class chatController {
 
-    constructor($http) {
-        let messages = {};
-        $http.get('/chat').then(function (data) {
-            messages = data;
-        })
+
+    constructor(ChatRepository) {
+        this.chatRepository = ChatRepository;
+        this.messages = {};
+    }
+
+    getMessages() {
+        this.chatRepository.getMessages((data) => {
+            this.messages = data;
+        });
     }
 
     sendMessage() {
-        $http.post('/chat', {
-            content: this.content
-        }).then(
-            function (data) {
-                console.log(data);
-            }
-        )
+        this.chatRepository.sendMessages(this.content, (data) => {
+            console.log(data);
+        });
     }
 }
 

@@ -1,12 +1,18 @@
-<div>
-    <img ng-if="!tourGuideCtrl.previousEmpty" class="back" ng-click="tourGuideCtrl.previosIndex()"
-         src="../../../images/back.png">
-    <div class="div-images">
-        <img class="images" ng-src="{{tourGuideCtrl.slides[tourGuideCtrl.index].image}}">
+<div class="row">
+    <div class="col-xs-1">
+        <img ng-if="!tourGuideCtrl.previousEmpty" class="back" ng-click="tourGuideCtrl.previosIndex()"
+             src="../../../images/back.png">
     </div>
-    <div class="glyphicon glyphicon-info-sign room-tooltip">
-        <span class="tooltiptext">{{tourGuideCtrl.slides[tourGuideCtrl.index].description}}</span>
+    <div class="col-xs-10">
+        <div class="div-images">
+            <img class="images" ng-src="{{tourGuideCtrl.slides[tourGuideCtrl.index].image}}">
+        </div>
+        <div class="glyphicon glyphicon-info-sign room-tooltip">
+            <span class="tooltiptext">{{tourGuideCtrl.slides[tourGuideCtrl.index].description}}</span>
+        </div>
     </div>
-    <img ng-if="!tourGuideCtrl.nextEmpty" class="forward" ng-click="tourGuideCtrl.nextIndex()"
-         src="../../../images/forward.png">
+    <div class="col-xs-1">
+        <img ng-if="!tourGuideCtrl.nextEmpty" class="forward" ng-click="tourGuideCtrl.nextIndex()"
+             src="../../../images/forward.png">
+    </div>
 </div>
