@@ -17,32 +17,33 @@ import imgPath11 from '../../../images/10a_1.jpg';
 import imgPath12 from '../../../images/sala_wykładowa bud_E.jpg';
 import imgPath13 from '../../../images/sala_wykładowa_ budynek_E.jpg';
 
+
 class TourGuideController {
 
     constructor($stateParams) {
 
         this.buildingID = $stateParams.buildingID;
 
-        if (this.buildingID === 1) {
+        if (this.buildingID == 1) {
             this.slides = [
                 {image: imgPath1, description: 'Image 00'},
                 {image: imgPath2, description: 'Image 01'},
                 {image: imgPath3, description: 'Image 02'},
                 {image: imgPath4, description: 'Image 03'},
             ];
-        } else if (this.buildingID === 2) {
+        } else if (this.buildingID == 2) {
             this.slides = [
                 {image: imgPath5, description: 'Image 00'},
                 {image: imgPath6, description: 'Image 01'},
                 {image: imgPath7, description: 'Image 02'},
             ];
-        } else if (this.buildingID === 3) {
+        } else if (this.buildingID == 3) {
             this.slides = [
                 {image: imgPath8, description: 'Image 00'},
                 {image: imgPath9, description: 'Image 01'},
                 {image: imgPath10, description: 'Image 02'},
             ];
-        } else if (this.buildingID === 4) {
+        } else if (this.buildingID == 4) {
             this.slides = [
                 {image: imgPath11, description: 'Image 00'},
                 {image: imgPath12, description: 'Image 01'},
