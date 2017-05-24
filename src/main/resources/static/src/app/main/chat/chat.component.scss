@@ -1,13 +1,37 @@
+@import "../../../variables";
+
 .chatbox {
-    background-color: lightgrey;
-    width: 600px;
-    border: 5px solid black;
-    padding: 25px;
-    margin-bottom: 10px;
+    width: 300px;
 }
 
 .chat-window {
     position: fixed;
     right: 0;
     bottom: 0;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.chat-message {
+    background-color: $color-primary;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 10px;
+    padding: 5px;
+ }
+
+.chat-textbox {
+    width: 236px;
+    border: none;
+    padding: 5px;
+    margin-right: 0;
+    position: relative;
+    left: 3px;
+}
+
+.chat-button {
+    background-color: $color-primary;
+    color: white;
+    border: none;
+    padding: 5px;
 }
