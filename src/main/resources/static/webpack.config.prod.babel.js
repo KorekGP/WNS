@@ -53,7 +53,7 @@ module.exports = new Config().extend('./webpack.config.common.babel.js').merge({
             add: true
         }),
         new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
+            sourceMap: true,
             mangle: false
         }),
         new webpack.optimize.CommonsChunkPlugin({

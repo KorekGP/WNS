@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
+    "analyze": "cross-env NODE_ENV=production webpack --config webpack.config.prod.babel.js --json | node_modules/webpack-bundle-size-analyzer/webpack-bundle-size-analyzer",
     "pretest": "webdriver-manager update",
     "test-e2e": "protractor ./test/protractor.conf.js",
     "unit": "cross-env NODE_ENV=test babel-node --presets es2015 -- ./node_modules/karma/bin/karma start karma.conf.js",
@@ -75,6 +76,7 @@
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
+    "webpack-bundle-size-analyzer": "^2.7.0",
     "webpack-config": "^7.0.0",
     "webpack-dev-server": "^2.4.2"
   }

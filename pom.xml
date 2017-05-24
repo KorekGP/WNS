@@ -6,7 +6,7 @@
     <groupId>wmi.students</groupId>
     <artifactId>WNS</artifactId>
     <version>0.0.2-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>WNS</name>
     <description>Demo project for Spring Boot</description>
