@@ -7,15 +7,23 @@ import './header.component.scss';
 
 class HeaderController {
 
-    constructor() {
-        this.chat = false;
+    constructor($uibModal) {
+        this.chat = true;
         this.navCollapsed = true;
         this.headerPath = headerPath;
+        this.$uibModal = $uibModal;
     }
 
     openChat() {
         this.chat = this.chat === false;
     }
+
+    openLoginModal() {
+        this.$uibModal.open({
+            component: 'appLoginModal',
+        });
+    }
+
 }
 
 export default {
