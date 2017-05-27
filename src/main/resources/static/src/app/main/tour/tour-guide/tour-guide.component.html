@@ -1,18 +1,27 @@
-<div class="row">
-    <div class="col-xs-1">
-        <img ng-if="!tourGuideCtrl.previousEmpty" class="back" ng-click="tourGuideCtrl.previosIndex()"
-             src="../../../images/back.png">
-    </div>
-    <div class="col-xs-10">
-        <div class="div-images">
-            <img class="images" ng-src="{{tourGuideCtrl.slides[tourGuideCtrl.index].image}}">
+<div class="container carousel-container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li ng-repeat="slide in tourGuideCtrl.slides track by $index" data-target="#myCarousel" data-slide-to={{$index}} ng-class="{active: $index == '0'}"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            <div class="item active">
+                <img ng-src="{{tourGuideCtrl.slides[0].image}}" alt="Los Angeles" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>{{tourGuideCtrl.slides[0].description}}</h3>
+                </div>
+            </div>
+
+            <div class="item" ng-repeat="slide in tourGuideCtrl.slides" ng-if="$index > 0">
+                <img ng-src="{{slide.image}}" alt="Chicago" style="width:100%;">
+                <div class="carousel-caption">
+                    <h3>{{slide.description}}</h3>
+                </div>
+            </div>
+
         </div>
-        <div class="glyphicon glyphicon-info-sign room-tooltip">
-            <span class="tooltiptext">{{tourGuideCtrl.slides[tourGuideCtrl.index].description}}</span>
-        </div>
-    </div>
-    <div class="col-xs-1">
-        <img ng-if="!tourGuideCtrl.nextEmpty" class="forward" ng-click="tourGuideCtrl.nextIndex()"
-             src="../../../images/forward.png">
     </div>
 </div>
