@@ -7,9 +7,10 @@
 .chat-window {
     position: fixed;
     right: 0;
-    bottom: 54px;
+    bottom: 52px;
     background-color: lightgray;
     padding: 10px;
+    z-index: 100;
 }
 
 .chat-message {
@@ -36,20 +37,20 @@
     padding: 5px;
 }
 
-@media (max-width: 849px) {
+@media (max-width: 807px) {
     .chat-window {
-        bottom: 73px;
+        bottom: 69px;
     }
 }
 
 @media (max-width: 604px) {
     .chat-window {
-        bottom: 88px;
+        bottom: 84px;
     }
 }
 
-@media (max-width: 446px) {
+@media (max-width: 430px) {
     .chat-window {
-        bottom: 107px;
+        bottom: 101px;
     }
 }
