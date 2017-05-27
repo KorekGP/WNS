@@ -1,35 +1,16 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a href="#" class="navbar-brand">Wydział Nauk Społecznych - Wirtualny spacer</a>
-            <button type="button" class="navbar-toggle" ng-click="$ctrl.navCollapsed = !$ctrl.navCollapsed">
-                <span class="sr-only">
-                    Toggle navigation
-                </span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div uib-collapse="$ctrl.navCollapsed" class="navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a id="chat" ng-click="headerCtrl.openChat()">
-                        <i class="fa fa-2x fa-comment"></i>
-                        <span>Czat</span>
-                    </a>
-                    <a ui-sref="faq">
-                        <i class="fa fa-2x fa-question-circle"></i>
-                        <span>Faq</span>
-                    </a>
-                </li>
-            </ul>
+<nav>
+    <div class="navbar">
+        <a href="#">
+            <img src="../images/UAM.png" class="navbar-logo">
+            <div class="navbar-faculty">Wydział Nauk Społecznych</div>
+        </a>
+        <div class="navbar-icons">
+            <div class="navbar-icon" ng-click="headerCtrl.openLoginModal()"><img src="../images/login.svg">ZALOGUJ</div>
+            <div class="navbar-icon" ng-click="headerCtrl.openChat()"><img src="../images/chat.svg">CZAT</div>
+            <div class="navbar-icon"><img src="../images/faq.svg">FAQ</div>
         </div>
     </div>
 </nav>
-<header>
-    <img src="{{$ctrl.headerPath}}">
-</header>
 <div ng-if="headerCtrl.chat" ng-class="{chat: popup-box-on}">
     <app-chat></app-chat>
 </div>

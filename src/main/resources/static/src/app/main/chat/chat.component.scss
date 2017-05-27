@@ -7,7 +7,7 @@
 .chat-window {
     position: fixed;
     right: 0;
-    bottom: 0;
+    bottom: 54px;
     background-color: lightgray;
     padding: 10px;
 }
@@ -34,4 +34,22 @@
     color: white;
     border: none;
     padding: 5px;
+}
+
+@media (max-width: 849px) {
+    .chat-window {
+        bottom: 73px;
+    }
+}
+
+@media (max-width: 604px) {
+    .chat-window {
+        bottom: 88px;
+    }
+}
+
+@media (max-width: 446px) {
+    .chat-window {
+        bottom: 107px;
+    }
 }

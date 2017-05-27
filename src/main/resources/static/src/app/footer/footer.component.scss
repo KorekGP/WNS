@@ -1,19 +1,23 @@
 @import "../../variables";
 
-footer {
-    background-color: $color-primary-darker;
-}
-
-.row > .col-xs-12 {
+.footer {
+    background-color: $color-primary;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px;
     text-align: center;
 }
 
-
-
-.row h4 {
-    color: #fff;
+.footer-bigger-text {
+    font-family: Tahoma, sans-serif;
+    font-size: 10pt;
+    color: white;
 }
 
-#cookie-small {
-    color: #fff;
+.footer-smaller-text {
+    font-family: Tahoma, sans-serif;
+    font-size: 8pt;
+    color: white;
 }
