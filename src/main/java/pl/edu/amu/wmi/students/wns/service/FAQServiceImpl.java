@@ -1,6 +1,8 @@
 package pl.edu.amu.wmi.students.wns.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pl.edu.amu.wmi.students.wns.db.FAQRepository;
 import pl.edu.amu.wmi.students.wns.model.FAQ;
@@ -34,6 +36,11 @@ public class FAQServiceImpl {
 
     public List<FAQ> findFAQByTitle(String FAQTitle){
         return FAQRepository.findByTitleContaining(FAQTitle);
+    }
+
+    public ResponseEntity addFaq(FAQ faq) {
+        FAQRepository.save(faq);
+        return new ResponseEntity(HttpStatus.OK);
     }
 }
 

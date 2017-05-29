@@ -13,8 +13,7 @@ public class ChatMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
-    private User user;
+
     private String content;
     private Date createdAt;
 
