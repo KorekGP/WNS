@@ -3,12 +3,14 @@ package pl.edu.amu.wmi.students.wns.user.config;
 /**
  * Created by Grzegorz on 2016-03-31.
  */
+
 import org.apache.catalina.security.SecurityConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -33,13 +35,37 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Override
     protected void configure(HttpSecurity httpSecurity) {
         try {
             httpSecurity
                     .csrf().disable()
                     .authorizeRequests()
-                    .antMatchers("/**").permitAll();
-
+                    .antMatchers("/**").permitAll()
+                    .antMatchers("api/login").permitAll()
+                    .antMatchers("login").permitAll()
+                    .antMatchers("/api/login").permitAll()
+                    .antMatchers("/login").permitAll()
+                    .antMatchers("/api/login/").permitAll()
+                    .antMatchers("/login/").permitAll()
+                    .antMatchers("api/login/").permitAll()
+                    .antMatchers("login/").permitAll()
+                    .antMatchers("spring-security-oauth-server/oauth/token/").permitAll()
+                    .antMatchers("spring-security-oauth-server/oauth/token").permitAll()
+                    .antMatchers("/spring-security-oauth-server/oauth/token/").permitAll()
+                    .antMatchers("/spring-security-oauth-server/oauth/token").permitAll()
+                    .antMatchers("api/spring-security-oauth-server/oauth/token").permitAll()
+                    .antMatchers("api/spring-security-oauth-server/oauth/token/").permitAll()
+                    .antMatchers("/api/spring-security-oauth-server/oauth/token").permitAll()
+                    .antMatchers("/api/spring-security-oauth-servero/auth/token/").permitAll()
+                    .anyRequest()
+                    .authenticated()
+                    .and();
         } catch (Exception e) {
             LOGGER.error("Błąd podczas konfiguracji autoryzowanych stron", e);
         }
