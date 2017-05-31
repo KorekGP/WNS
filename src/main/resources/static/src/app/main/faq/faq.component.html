@@ -1,1 +1,43 @@
-<h1>FAQ</h1>
+<div class="container faq-container">
+    <h2>FAQ</h2>
+    <table class="table table-condensed">
+        <tbody>
+        <tr ng-repeat="faq in faqCtrl.faqs">
+            <td>{{faq.title}}<br>
+                {{faq.description}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Dodaj nowy faq</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="form-control-label">Pytanie:</label>
+                            <input type="text" class="form-control" id="recipient-name" ng-model="faqCtrl.title">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="form-control-label">Odpowiedź:</label>
+                            <textarea class="form-control" id="message-text" ng-model="faqCtrl.description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                    <button type="button" class="btn btn-primary" ng-click="faqCtrl.sendFaq()" data-dismiss="modal">Dodaj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+

@@ -4,6 +4,9 @@
 import appFaq from './faq.component.js';
 import commonModule from '../../common/common.module';
 import faqComponent from './faq.component';
+import angularMomentModule from 'angular-moment';
+import FaqRepository from './faq.repo';
+
 
 function appRoutes($stateProvider) {
     $stateProvider.state('faq', {
@@ -13,8 +16,10 @@ function appRoutes($stateProvider) {
 }
 
 export default angular.module('app.faq', [
+    angularMomentModule,
     commonModule
 ])
     .component('appFaq', faqComponent)
+    .factory('FaqRepository', FaqRepository)
     .config(appRoutes)
     .name;

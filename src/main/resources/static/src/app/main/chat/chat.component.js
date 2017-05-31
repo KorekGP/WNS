@@ -6,10 +6,10 @@ import './chat.component.scss';
 
 class chatController {
 
-
     constructor(ChatRepository) {
         this.chatRepository = ChatRepository;
         this.messages = {};
+        this.getMessages();
     }
 
     getMessages() {
@@ -20,7 +20,8 @@ class chatController {
 
     sendMessage() {
         this.chatRepository.sendMessages(this.content, (data) => {
-            console.log(data);
+            this.content = "";
+            this.getMessages();
         });
     }
 }

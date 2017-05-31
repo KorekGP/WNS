@@ -46,4 +46,9 @@ public class FAQController {
     public List<FAQ> findFaqByTitle(@RequestParam(value = "title") String faqTitle){
         return FAQServiceImpl.findFAQByTitle(faqTitle);
     }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/faq/title")
+    public ResponseEntity findFaqByTitle(@RequestBody FAQ faq){
+        return FAQServiceImpl.addFaq(faq);
+    }
 }
