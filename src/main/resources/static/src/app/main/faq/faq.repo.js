@@ -8,7 +8,7 @@ export class FaqRepository {
         this.$http.get('/faq').then(callback);
     }
 
-    sendFaq(content, description, callback) {
+    sendFaq(title, description, callback) {
         this.$http.post('/faq', {
             title: title,
             description: description
