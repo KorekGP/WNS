@@ -10,15 +10,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.StandardPasswordEncoder;
+import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
 
 @Configuration
 @EnableWebSecurity
@@ -35,40 +36,39 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    @Bean
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
-
-    @Override
     protected void configure(HttpSecurity httpSecurity) {
         try {
             httpSecurity
+                    .exceptionHandling()
+                    .authenticationEntryPoint(new Http403ForbiddenEntryPoint());
+            httpSecurity
                     .csrf().disable()
                     .authorizeRequests()
-                    .antMatchers("/**").permitAll()
-                    .antMatchers("api/login").permitAll()
-                    .antMatchers("login").permitAll()
-                    .antMatchers("/api/login").permitAll()
-                    .antMatchers("/login").permitAll()
-                    .antMatchers("/api/login/").permitAll()
-                    .antMatchers("/login/").permitAll()
-                    .antMatchers("api/login/").permitAll()
-                    .antMatchers("login/").permitAll()
-                    .antMatchers("spring-security-oauth-server/oauth/token/").permitAll()
-                    .antMatchers("spring-security-oauth-server/oauth/token").permitAll()
-                    .antMatchers("/spring-security-oauth-server/oauth/token/").permitAll()
-                    .antMatchers("/spring-security-oauth-server/oauth/token").permitAll()
-                    .antMatchers("api/spring-security-oauth-server/oauth/token").permitAll()
-                    .antMatchers("api/spring-security-oauth-server/oauth/token/").permitAll()
-                    .antMatchers("/api/spring-security-oauth-server/oauth/token").permitAll()
-                    .antMatchers("/api/spring-security-oauth-servero/auth/token/").permitAll()
-                    .anyRequest()
-                    .authenticated()
-                    .and();
+                    .antMatchers("/user").hasRole("ADMIN")
+                    .antMatchers("/user/*").hasRole("ADMIN")
+                    .anyRequest().permitAll()
+                    .and()
+                    .formLogin()
+                    .permitAll()
+                    .and()
+                    .logout()
+                    .permitAll();
         } catch (Exception e) {
             LOGGER.error("Błąd podczas konfiguracji autoryzowanych stron", e);
         }
+    }
+
+    @Override
+    public void configure(final WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/*.js");
+        web.ignoring().antMatchers("/*.map");
+        web.ignoring().antMatchers("/*.woff");
+        web.ignoring().antMatchers("/*.woff2");
+        web.ignoring().antMatchers("/*.css");
+        web.ignoring().antMatchers("/*.html");
+        web.ignoring().antMatchers("/*.jpg");
+        web.ignoring().antMatchers("/*.png");
+        web.ignoring().antMatchers("/*.ico");
     }
 
 

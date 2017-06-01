@@ -8,6 +8,7 @@ import appDescription from './description/description.component';
 import uiRouter from '@uirouter/angularjs';
 import commonModule from '../common/common.module';
 import chatModule from './chat/chat.module';
+import {init} from '../common/service/LocalStorageManager.js';
 
 function appRoutes($stateProvider, $urlRouterProvider) {
     'use strict';
@@ -30,4 +31,5 @@ export default angular.module('app.main', [
     .component('appTour', appTour)
     .component('appDescription', appDescription)
     .component('appTourInfo', appTourInfo)
-    .config(appRoutes).name;
+    .config(appRoutes)
+    .run(init).name;

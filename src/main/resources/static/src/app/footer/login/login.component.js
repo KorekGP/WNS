@@ -6,8 +6,7 @@ import './login.component.scss';
 
 class LoginController {
 
-    constructor(loginService) {
-        this.loginService = loginService;
+    constructor() {
         this.passwordSwitch = true;
     }
 
@@ -20,7 +19,8 @@ class LoginController {
 
 export default {
     bindings: {
-        credentials: '<'
+        credentials: '<',
+        shakeError: '<'
     },
     controller: LoginController,
     controllerAs: 'modal',

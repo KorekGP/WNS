@@ -7,12 +7,13 @@ import org.springframework.security.crypto.password.StandardPasswordEncoder;
 /**
  * WNS Created by eryk on 31.05.17.
  */
-public class V1_01__StubUsers implements SpringJdbcMigration {
+public class V1_02__StubUsers implements SpringJdbcMigration {
 
 
     @Override
     public void migrate(JdbcTemplate jdbcTemplate) throws Exception {
-        String password = new StandardPasswordEncoder().encode("admin");
+        jdbcTemplate.execute("ALTER TABLE wns_user ALTER COLUMN password TYPE CHARACTER VARYING (81)");
+        String password = "'" + new StandardPasswordEncoder().encode("admin") + "'";
         jdbcTemplate.execute("INSERT INTO wns_user\n" +
                 "(\n" +
                 "  email,\n" +
