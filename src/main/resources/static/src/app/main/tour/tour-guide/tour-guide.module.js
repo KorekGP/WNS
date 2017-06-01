@@ -5,8 +5,8 @@
  * Created by Grzegorz on 06.05.2017.
  */
 import tourGuide from './tour-guide.component';
-import commonModule from '../../../common/common.module';
 import tourComponent from './tour-guide.component';
+import commonModule from '../../../common/common.module';
 
 
 function appRoutes($stateProvider) {

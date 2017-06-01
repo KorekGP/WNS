@@ -50,8 +50,8 @@ class TourGuideController {
                 {image: imgPath13, description: 'Image 02'},
             ];
         }
-        this.noWrapSlides=false;
-        this.interval=5000;
+        this.noWrapSlides = false;
+        this.interval = 5000;
         this.active = 0;
     }
 

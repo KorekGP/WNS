@@ -20,7 +20,7 @@ class chatController {
 
     sendMessage() {
         this.chatRepository.sendMessages(this.content, (data) => {
-            this.content = "";
+            this.content = '';
             this.getMessages();
         });
     }

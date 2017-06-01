@@ -10,8 +10,8 @@ class faqController {
         this.faqRepository = FaqRepository;
         this.faqs = {};
         this.getFaqs();
-        this.title = "";
-        this.description = "";
+        this.title = '';
+        this.description = '';
     }
 
     getFaqs() {
@@ -22,13 +22,13 @@ class faqController {
 
     sendFaq() {
         this.faqRepository.sendFaq(this.title, this.description, (data) => {
-                this.title = "";
-                this.description = "";
+                this.title = '';
+                this.description = '';
                 this.getFaqs();
             },
             (err) => {
-                this.title = "";
-                this.description = "";
+                this.title = '';
+                this.description = '';
             });
 
     }
