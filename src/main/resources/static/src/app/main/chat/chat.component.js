@@ -14,7 +14,7 @@ class chatController {
 
     getMessages() {
         this.chatRepository.getMessages((data) => {
-            this.messages = data;
+            this.messages = data.data;
         });
     }
 

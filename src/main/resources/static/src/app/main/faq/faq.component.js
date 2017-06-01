@@ -16,7 +16,7 @@ class faqController {
 
     getFaqs() {
         this.faqRepository.getFaqs((data) => {
-            this.faqs = data;
+            this.faqs = data.data;
         });
     }
 
