@@ -11,11 +11,8 @@ html, body {
 
 section hr {
     border-top: 3px solid $color-primary;
-    width: 60px;
-}
-
-section hr.dark {
     border-color: $color-primary;
+    width: 60px;
 }
 
 section hr.light {
@@ -48,6 +45,5 @@ section.section-padding {
 }
 
 .no-margin {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
 }

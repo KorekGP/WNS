@@ -32,6 +32,7 @@
         <projectlombock.version>1.16.8</projectlombock.version>
         <hibernate.version>5.2.9.Final</hibernate.version>
         <spring.data.jpa.version>1.11.1.RELEASE</spring.data.jpa.version>
+        <flyway.version>4.2.0</flyway.version>
     </properties>
 
 
@@ -143,6 +144,12 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-hibernate4</artifactId>
             <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${flyway.version}</version>
         </dependency>
 
         <dependency>

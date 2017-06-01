@@ -3,14 +3,28 @@
  */
 const routeUrl = 'admin';
 
+function _redirectIfNotAuthenticated($q, $state, $timeout, $rootScope) {
+    return $q((resolve, reject) => {
+        if ($rootScope.authenticate()) {
+            resolve();
+        } else {
+            reject();
+            $timeout(function () {
+                $state.go('app');
+            });
+        }
+    }).promise;
+}
+
 function routeConfig($stateProvider) {
     $stateProvider.state(routeUrl, {
         url: '/admin',
-        component: 'appAdmin'
+        component: 'appAdmin',
+        resolve: _redirectIfNotAuthenticated
     });
 }
 
-export  {
+export {
     routeUrl,
     routeConfig
 }

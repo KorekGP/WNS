@@ -10,25 +10,25 @@ class faqController {
         this.faqRepository = FaqRepository;
         this.faqs = {};
         this.getFaqs();
-        this.title = "";
-        this.description = "";
+        this.title = '';
+        this.description = '';
     }
 
     getFaqs() {
         this.faqRepository.getFaqs((data) => {
-            this.faqs = data;
+            this.faqs = data.data;
         });
     }
 
     sendFaq() {
         this.faqRepository.sendFaq(this.title, this.description, (data) => {
-                this.title = "";
-                this.description = "";
+                this.title = '';
+                this.description = '';
                 this.getFaqs();
             },
             (err) => {
-                this.title = "";
-                this.description = "";
+                this.title = '';
+                this.description = '';
             });
 
     }
