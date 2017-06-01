@@ -12,7 +12,6 @@ import java.util.List;
 /**
  * Created by Grzegorz on 2016-04-13.
  */
-
 @Service
 public class DescriptionServiceImpl {
 

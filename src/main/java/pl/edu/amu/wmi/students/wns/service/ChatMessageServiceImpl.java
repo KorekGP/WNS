@@ -12,8 +12,12 @@ import java.util.List;
 @Service
 public class ChatMessageServiceImpl {
 
-    @Autowired
     private ChatMessageRepository chatMessageRepository;
+
+    @Autowired
+    public ChatMessageServiceImpl(ChatMessageRepository chatMessageRepository) {
+        this.chatMessageRepository = chatMessageRepository;
+    }
 
     public List<ChatMessage> getAllMessages() {
         return (List<ChatMessage>) chatMessageRepository.findAll();

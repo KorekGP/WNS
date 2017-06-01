@@ -13,6 +13,7 @@ import java.util.List;
 public interface FAQRepository extends PagingAndSortingRepository<FAQ, Long> {
 
     FAQ findById(Long id);
+
     List<FAQ> findByTitleContaining(String title);
 
 }

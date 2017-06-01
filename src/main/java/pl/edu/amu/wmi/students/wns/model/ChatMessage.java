@@ -1,9 +1,11 @@
 package pl.edu.amu.wmi.students.wns.model;
 
 import lombok.Data;
-import pl.edu.amu.wmi.students.wns.user.model.User;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
