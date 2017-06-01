@@ -1,7 +1,7 @@
 <section id="{{panel.id}}" class="section-padding">
-    <div class="container">
+    <div ng-class="panel.fluid ? 'container-fluid': 'container'">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="col-xs-12 text-center">
                 <h2>{{panel.title}}</h2>
                 <hr ng-class="{'light': panel.inverse}">
             </div>

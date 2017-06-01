@@ -16,7 +16,8 @@ export default {
     bindings: {
         title: '@',
         id: '@?',
-        inverse: '=?'
+        inverse: '=?',
+        fluid: '<'
     },
     controller: CommonPanelController,
     controllerAs: 'panel',
