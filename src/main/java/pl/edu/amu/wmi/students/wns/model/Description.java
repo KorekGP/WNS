@@ -20,8 +20,4 @@ public class Description {
     private Long id;
 
     private String description;
-
-    @NotNull
-    private String roomName;
-
 }

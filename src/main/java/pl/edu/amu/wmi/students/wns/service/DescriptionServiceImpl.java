@@ -22,8 +22,8 @@ public class DescriptionServiceImpl {
         return (List<Description>) descriptionRepository.findAll();
     }
 
-    public Description getDescription(String roomName) {
-        return descriptionRepository.findByRoomName(roomName);
+    public Description getDescription(Long roomName) {
+        return descriptionRepository.findById(roomName);
     }
 
     public ResponseEntity addDescription(Description description) {

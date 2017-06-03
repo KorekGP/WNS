@@ -7,6 +7,9 @@
 import tourGuide from './tour-guide.component';
 import tourComponent from './tour-guide.component';
 import commonModule from '../../../common/common.module';
+import * as moment from 'moment';
+import angularMomentModule from 'angular-moment';
+import TourRepository from './tour-guide.repo';
 
 
 function appRoutes($stateProvider) {
@@ -17,8 +20,10 @@ function appRoutes($stateProvider) {
 }
 
 export default angular.module('tour.guide', [
-    commonModule
+    commonModule,
+    angularMomentModule,
 ])
     .component('tourGuide', tourComponent)
+    .factory('TourRepository', TourRepository)
     .config(appRoutes)
     .name;

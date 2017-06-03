@@ -6,7 +6,10 @@ import './faq.component.scss';
 
 class faqController {
 
-    constructor(FaqRepository) {
+    constructor(FaqRepository, $rootScope) {
+
+        this.authenticated = $rootScope.authenticated;
+
         this.faqRepository = FaqRepository;
         this.faqs = {};
         this.getFaqs();
