@@ -1,16 +1,26 @@
-<div class="container faq-container">
-    <h2>FAQ</h2>
-    <table class="table table-condensed">
-        <tbody>
-        <tr ng-repeat="faq in faqCtrl.faqs">
-            <td>{{faq.title}}<br>
-                {{faq.description}}
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Dodaj nowy faq</button>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<app-common-panel id="faq-container" title="FAQ">
+    <div class="col-xs-12">
+        <div class="panel-group">
+            <div class="panel panel-default" ng-repeat="faq in faqCtrl.faqs">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a>{{faq.title}}</a>
+                    </h4>
+                </div>
+                <div class="panel-body">
+                    {{faq.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="faqCtrl.authenticated" class="col-lg-offset-9 col-lg-3 col-md-offset-8 col-md-4 col-sm-offset-6 col-sm-6 col-xs-12">
+        <button type="button" class="btn btn-primary full-width" data-toggle="modal" data-target="#exampleModal"
+                data-whatever="@mdo">
+            Dodaj nowy FAQ
+        </button>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -26,18 +36,18 @@
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="form-control-label">Odpowiedź:</label>
-                            <textarea class="form-control" id="message-text" ng-model="faqCtrl.description"></textarea>
+                            <textarea class="form-control" id="message-text"
+                                      ng-model="faqCtrl.description"></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                    <button type="button" class="btn btn-primary" ng-click="faqCtrl.sendFaq()" data-dismiss="modal">Dodaj</button>
+                    <button type="button" class="btn btn-primary" ng-click="faqCtrl.sendFaq()" data-dismiss="modal">
+                        Dodaj
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-
-</div>
-</div>
-
+</app-common-panel>

@@ -23,6 +23,8 @@ import static pl.edu.amu.wmi.students.wns.user.config.ModelAttributeLength.DEFAU
 @Table(name = "wns_user")
 public class User implements UserDetails {
 
+    private static final int PASSWORD_MAX_LEN = 81;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
@@ -37,7 +39,7 @@ public class User implements UserDetails {
     private String email;
 
     @NotNull
-    @Length(min = DEFAULT_MIN_LEN, max = DEFAULT_MAX_LEN)
+    @Length(min = DEFAULT_MIN_LEN, max = PASSWORD_MAX_LEN)
     private String password;
 
     @NotNull

@@ -6,19 +6,37 @@
  */
 import html from './login-modal.component.html';
 import '../login.component.scss';
-import {routeUrl} from '../../../admin/admin.routes'
+
+const WRONG_PASS_MSG = 'Błędny login lub hasło';
 
 class LoginModalController {
 
-    constructor($state) {
+    constructor($state, LoginService) {
         this.credentials = {};
+        this.shakeError = {};
         this.$state = $state;
+        this.loginService = LoginService;
     }
 
-    login() {
-        if (this.credentials.username === 'admin' && this.credentials.password === 'admin') {
-            this.$state.go(routeUrl);
+    _successCallback() {
+        return () => {
+            this.modalInstance.close();
         }
+    };
+
+    _failureCallback() {
+        return () => {
+            this.shakeError.shake(WRONG_PASS_MSG);
+        }
+    };
+
+
+    login() {
+        this.loginService.login(
+            this.credentials,
+            this._successCallback(),
+            this._failureCallback()
+        );
     }
 
 }

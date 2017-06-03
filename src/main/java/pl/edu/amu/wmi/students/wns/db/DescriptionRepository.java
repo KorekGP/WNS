@@ -11,7 +11,4 @@ import pl.edu.amu.wmi.students.wns.model.Description;
 public interface DescriptionRepository extends PagingAndSortingRepository<Description, Long> {
 
     Description findById(Long id);
-
-    Description findByRoomName(String surname);
-
 }

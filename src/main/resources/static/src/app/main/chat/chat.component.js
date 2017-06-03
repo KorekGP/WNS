@@ -14,13 +14,13 @@ class chatController {
 
     getMessages() {
         this.chatRepository.getMessages((data) => {
-            this.messages = data;
+            this.messages = data.data;
         });
     }
 
     sendMessage() {
         this.chatRepository.sendMessages(this.content, (data) => {
-            this.content = "";
+            this.content = '';
             this.getMessages();
         });
     }

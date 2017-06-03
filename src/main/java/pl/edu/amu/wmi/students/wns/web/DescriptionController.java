@@ -29,7 +29,7 @@ public class DescriptionController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{roomName}")
-    public Description findDescriptionByroomName(@PathVariable String roomName) throws NotFoundException {
+    public Description findDescriptionByroomName(@PathVariable Long roomName) throws NotFoundException {
         if (descriptionServiceImpl.getDescription(roomName) == null) {
             throw new NotFoundException("Nie ma opisu do tego pokoju");
         }
@@ -43,7 +43,7 @@ public class DescriptionController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/{roomName}/{description}")
-    public ResponseEntity editDescription(@PathVariable String roomName, @PathVariable String newDescription) {
+    public ResponseEntity editDescription(@PathVariable Long roomName, @PathVariable String newDescription) {
         Description description = descriptionServiceImpl.getDescription(roomName);
         description.setDescription(newDescription);
         descriptionServiceImpl.editDescription(description);

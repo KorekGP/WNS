@@ -5,10 +5,9 @@ module.exports = new Config()
     .extend('./webpack.config.common.babel.js')
     .merge({
         output: {
-            pathinfo: true,
-            filename: 'bundle.js'
+            filename: '[name].js'
         },
-        devtool: 'source-map',
+        devtool: 'eval',
         entry: {
             bundle: './index.js',
             vendor: [
@@ -43,15 +42,6 @@ module.exports = new Config()
                     }
                 }]
             }]
-        },
-        plugins: [
-            new webpack.LoaderOptionsPlugin({
-                debug: true
-            }),
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor',
-                filename: 'vendor.bundle.js'
-            })
-        ]
+        }
     });
 

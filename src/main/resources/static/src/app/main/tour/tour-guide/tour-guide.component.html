@@ -2,7 +2,8 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li ng-repeat="slide in tourGuideCtrl.slides track by $index" data-target="#myCarousel" data-slide-to={{$index}} ng-class="{active: $index == '0'}"></li>
+            <li ng-repeat="slide in tourGuideCtrl.slides track by $index" data-target="#myCarousel"
+                data-slide-to={{$index}} ng-class="{active: $index == '0'}"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -22,6 +23,44 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+    <button type="button" ng-if="tourGuideCtrl.authenticated" class="btn btn-primary description-button" data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@mdo">
+        Edytuj opis
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="form-control-label">Numer zdjęcia(Uwaga! Zdjęcia
+                                numerowane są od 0)</label>
+                            <input type="number" class="form-control" id="recipient-name"
+                                   ng-model="tourGuideCtrl.roomId">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="form-control-label">Nowy opis</label>
+                            <textarea class="form-control" id="message-text"
+                                      ng-model="tourGuideCtrl.changedDescription"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                    <button type="button" class="btn btn-primary" ng-click="tourGuideCtrl.editDescriptions()"
+                            data-dismiss="modal">
+                        Dodaj
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

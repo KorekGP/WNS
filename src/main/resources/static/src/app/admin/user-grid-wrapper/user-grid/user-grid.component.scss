@@ -2,8 +2,10 @@
 @import '../../../../styles';
 
 $grid-height: 600px;
-$grid-width: 810px;
+$grid-width: 760px;
+$grid-width-xs: 100%;
 $body-margin: 60px;
+
 
 .ag-grid-wrapper {
     padding-right: 15px;
@@ -13,12 +15,20 @@ $body-margin: 60px;
 }
 
 .ag-grid-style {
+    margin: 0 auto;
     height: $grid-height;
+    width: $grid-width;
 }
 
-.ag-header-viewport {
-    //background: #fff;
-    //@extend .m
+app-user-grid > .row.no-margin {
+    clear: both;
+}
+
+
+@media (max-width: $screen-xs-max) {
+    .ag-grid-style {
+        width: 100%;
+    }
 }
 
 .ag-header-cell {
@@ -36,5 +46,5 @@ $body-margin: 60px;
 .ag-body {
     top: $body-margin !important;
 }
-
-
+//
+//

@@ -3,9 +3,7 @@ package pl.edu.amu.wmi.students.wns.user.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import pl.edu.amu.wmi.students.wns.exceptions.NotFoundException;
 import pl.edu.amu.wmi.students.wns.user.db.UserServiceImpl;
 import pl.edu.amu.wmi.students.wns.user.model.ChangePasswordRequest;
 import pl.edu.amu.wmi.students.wns.user.model.User;
@@ -15,7 +13,6 @@ import java.util.List;
 /**
  * WNS Created by eryk on 10.05.17.
  */
-//@PreAuthorize("@hasRole('ADMIN')")
 @RestController
 @RequestMapping("/user")
 public class UserManagerController {
@@ -36,7 +33,7 @@ public class UserManagerController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/{userId}")
-    public ResponseEntity editUser(@RequestBody User user, @PathVariable("userId") int userId) throws NotFoundException {
+    public ResponseEntity editUser(@RequestBody User user, @PathVariable("userId") int userId) {
         if (userService.update(user, userId)) {
             return new ResponseEntity(HttpStatus.OK);
         }
@@ -44,7 +41,7 @@ public class UserManagerController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/user/change-password")
-    public ResponseEntity changePassword(ChangePasswordRequest passwordRequest) throws NotFoundException {
+    public ResponseEntity changePassword(ChangePasswordRequest passwordRequest) {
         if (userService.changePassword(passwordRequest)) {
             return new ResponseEntity(HttpStatus.OK);
         }

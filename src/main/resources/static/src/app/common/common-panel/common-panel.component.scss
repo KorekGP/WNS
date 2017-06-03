@@ -1,3 +1,8 @@
+@import "../../../variables.scss";
+
+$common-panel-top-margin: 70px;
+$common-panel-padding: 40px;
+
 app-common-panel > section {
     background: #fff;
 }
@@ -5,4 +10,20 @@ app-common-panel > section {
 section p {
     font-size: 17px;
     line-height: 1.5;
+}
+
+section hr {
+    border-top: 3px solid $color-primary;
+    border-color: $color-primary;
+    width: 60px;
+}
+
+section hr.light {
+    border-color: #fff;
+}
+
+section.section-padding {
+    margin-top: $common-panel-top-margin;
+    padding-top: $common-panel-padding;
+    padding-bottom: $common-panel-padding;
 }

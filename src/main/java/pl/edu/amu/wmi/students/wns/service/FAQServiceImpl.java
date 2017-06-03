@@ -15,31 +15,31 @@ import java.util.List;
 @Service
 public class FAQServiceImpl {
 
+    private FAQRepository faqRepository;
+
     @Autowired
-    private FAQRepository FAQRepository;
+    public FAQServiceImpl(FAQRepository faqRepository) {
+        this.faqRepository = faqRepository;
+    }
 
     public List<FAQ> getFAQs() {
-        return (List<FAQ>) FAQRepository.findAll();
+        return (List<FAQ>) faqRepository.findAll();
     }
 
-    public void delete(Long FAQId){
-        FAQRepository.delete(FAQId);
+    public void delete(Long faqId) {
+        faqRepository.delete(faqId);
     }
 
-    public void addFAQ(FAQ FAQ) {
-        FAQRepository.save(FAQ);
+    public FAQ findFAQById(Long faqId) {
+        return faqRepository.findById(faqId);
     }
 
-    public FAQ findFAQById(Long FAQId){
-        return FAQRepository.findById(FAQId);
-    }
-
-    public List<FAQ> findFAQByTitle(String FAQTitle){
-        return FAQRepository.findByTitleContaining(FAQTitle);
+    public List<FAQ> findFAQByTitle(String faqTitle) {
+        return faqRepository.findByTitleContaining(faqTitle);
     }
 
     public ResponseEntity addFaq(FAQ faq) {
-        FAQRepository.save(faq);
+        faqRepository.save(faq);
         return new ResponseEntity(HttpStatus.OK);
     }
 }
