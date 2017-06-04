@@ -6,10 +6,11 @@ import './chat.component.scss';
 
 class chatController {
 
-    constructor(ChatRepository) {
+    constructor(ChatRepository, $interval) {
         this.chatRepository = ChatRepository;
         this.messages = {};
         this.getMessages();
+        $interval(this.getMessages, 4000);
     }
 
     getMessages() {
