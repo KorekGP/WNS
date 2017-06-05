@@ -8,6 +8,8 @@ import pl.edu.amu.wmi.students.wns.exceptions.NotFoundException;
 import pl.edu.amu.wmi.students.wns.model.Description;
 import pl.edu.amu.wmi.students.wns.service.DescriptionServiceImpl;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -25,7 +27,9 @@ public class DescriptionController {
         if (descriptionServiceImpl.getAllDescriptions() == null) {
             throw new NotFoundException("Nie ma opisów w bazie");
         }
-        return descriptionServiceImpl.getAllDescriptions();
+        List<Description> descriptions = descriptionServiceImpl.getAllDescriptions();
+        descriptions.sort(Comparator.comparing(Description::getId));
+        return descriptions;
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/{roomName}")
@@ -42,9 +46,9 @@ public class DescriptionController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/{roomName}/{description}")
-    public ResponseEntity editDescription(@PathVariable Long roomName, @PathVariable String newDescription) {
-        Description description = descriptionServiceImpl.getDescription(roomName);
+    @RequestMapping(method = RequestMethod.PUT, value = "/{roomId}/{newDescription}")
+    public ResponseEntity editDescription(@PathVariable String roomId, @PathVariable String newDescription) {
+        Description description = descriptionServiceImpl.getDescription(Long.valueOf(roomId));
         description.setDescription(newDescription);
         descriptionServiceImpl.editDescription(description);
         return new ResponseEntity(HttpStatus.OK);

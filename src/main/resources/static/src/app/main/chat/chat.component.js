@@ -10,7 +10,9 @@ class chatController {
         this.chatRepository = ChatRepository;
         this.messages = {};
         this.getMessages();
-        $interval(this.getMessages, 4000);
+        $interval(() => {
+            this.getMessages()
+        }, 4000);
     }
 
     getMessages() {
