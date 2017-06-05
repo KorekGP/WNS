@@ -13,7 +13,7 @@
                 <img ng-src="{{tourGuideCtrl.slides[0].image}}" alt="Los Angeles" style="width:100%;">
                 <div class="carousel-caption">
                     <h3>{{tourGuideCtrl.slides[0].description}}
-                        <i class="glyphicon glyphicon-pencil edit-icon" ng-click="tourGuideCtrl.setProperId(tourGuideCtrl.slides[0].id)" data-toggle="modal" data-target="#exampleModal"
+                        <i class="glyphicon glyphicon-pencil edit-icon" ng-if="tourGuideCtrl.authenticated" ng-click="tourGuideCtrl.setProperId(tourGuideCtrl.slides[0].id)" data-toggle="modal" data-target="#exampleModal"
                            data-whatever="@mdo">
                         </i>
                     </h3>
@@ -24,7 +24,7 @@
                 <img ng-src="{{slide.image}}" alt="Chicago" style="width:100%;">
                 <div class="carousel-caption">
                     <h3>{{slide.description}}
-                        <i class="glyphicon glyphicon-pencil edit-icon" ng-click="tourGuideCtrl.setProperId(slide.id)" data-toggle="modal" data-target="#exampleModal"
+                        <i class="glyphicon glyphicon-pencil edit-icon" ng-if="tourGuideCtrl.authenticated" ng-click="tourGuideCtrl.setProperId(slide.id)" data-toggle="modal" data-target="#exampleModal"
                            data-whatever="@mdo">
                         </i>
                     </h3>
