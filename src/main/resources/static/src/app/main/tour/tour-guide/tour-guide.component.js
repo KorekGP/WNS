@@ -26,6 +26,7 @@ class TourGuideController {
         this.description = {};
         this.roomId = null;
         this.changedDescription = null;
+        this.id = null;
         this.buildingID = $stateParams.buildingID;
         this.getDescription();
     }
@@ -40,28 +41,28 @@ class TourGuideController {
     prepareImages() {
         if (this.buildingID == 1) {
             this.slides = [
-                {image: imgPath1, description: this.description[0].description},
-                {image: imgPath2, description: this.description[1].description},
-                {image: imgPath3, description: this.description[2].description},
-                {image: imgPath4, description: this.description[3].description},
+                {image: imgPath1, description: this.description[0].description, id: "1"},
+                {image: imgPath2, description: this.description[1].description, id: "2"},
+                {image: imgPath3, description: this.description[2].description, id: "3"},
+                {image: imgPath4, description: this.description[3].description, id: "4"},
             ];
         } else if (this.buildingID == 2) {
             this.slides = [
-                {image: imgPath5, description: this.description[4].description},
-                {image: imgPath6, description: this.description[5].description},
-                {image: imgPath7, description: this.description[6].description},
+                {image: imgPath5, description: this.description[4].description, id: "5"},
+                {image: imgPath6, description: this.description[5].description, id: "6"},
+                {image: imgPath7, description: this.description[6].description, id: "7"},
             ];
         } else if (this.buildingID == 3) {
             this.slides = [
-                {image: imgPath8, description: this.description[7].description},
-                {image: imgPath9, description: this.description[8].description},
-                {image: imgPath10, description: this.description[9].description},
+                {image: imgPath8, description: this.description[7].description, id: "8"},
+                {image: imgPath9, description: this.description[8].description, id: "9"},
+                {image: imgPath10, description: this.description[9].description, id: "10"},
             ];
         } else if (this.buildingID == 4) {
             this.slides = [
-                {image: imgPath11, description: this.description[10].description},
-                {image: imgPath12, description: this.description[11].description},
-                {image: imgPath13, description: this.description[12].description},
+                {image: imgPath11, description: this.description[10].description, id: "11"},
+                {image: imgPath12, description: this.description[11].description, id: "12"},
+                {image: imgPath13, description: this.description[12].description, id: "13"},
             ];
         }
 
@@ -70,9 +71,14 @@ class TourGuideController {
         this.active = 0;
     }
     editDescriptions() {
-        this.tourRepository.editDescriptions(this.roomId, this.changedDescription, (data) => {
+        this.tourRepository.editDescriptions(this.id, this.changedDescription, (data) => {
+            this.getDescription();
             console.log('Success');
         });
+    }
+
+    setProperId(id) {
+        this.id = id;
     }
 }
 

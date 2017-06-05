@@ -3,7 +3,6 @@
     width: 30%;
 }
 
-.description-button {
-    float: right;
-    margin-top: 5%;
+.edit-icon{
+    cursor: pointer;
 }

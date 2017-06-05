@@ -12,23 +12,27 @@
             <div class="item active">
                 <img ng-src="{{tourGuideCtrl.slides[0].image}}" alt="Los Angeles" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>{{tourGuideCtrl.slides[0].description}}</h3>
+                    <h3>{{tourGuideCtrl.slides[0].description}}
+                        <i class="glyphicon glyphicon-pencil edit-icon" ng-click="tourGuideCtrl.setProperId(tourGuideCtrl.slides[0].id)" data-toggle="modal" data-target="#exampleModal"
+                           data-whatever="@mdo">
+                        </i>
+                    </h3>
                 </div>
             </div>
 
             <div class="item" ng-repeat="slide in tourGuideCtrl.slides" ng-if="$index > 0">
                 <img ng-src="{{slide.image}}" alt="Chicago" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>{{slide.description}}</h3>
+                    <h3>{{slide.description}}
+                        <i class="glyphicon glyphicon-pencil edit-icon" ng-click="tourGuideCtrl.setProperId(slide.id)" data-toggle="modal" data-target="#exampleModal"
+                           data-whatever="@mdo">
+                        </i>
+                    </h3>
                 </div>
             </div>
 
         </div>
     </div>
-    <button type="button" ng-if="tourGuideCtrl.authenticated" class="btn btn-primary description-button" data-toggle="modal" data-target="#exampleModal"
-            data-whatever="@mdo">
-        Edytuj opis
-    </button>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -40,12 +44,6 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="form-control-label">Numer zdjęcia(Uwaga! Zdjęcia
-                                numerowane są od 0)</label>
-                            <input type="number" class="form-control" id="recipient-name"
-                                   ng-model="tourGuideCtrl.roomId">
-                        </div>
                         <div class="form-group">
                             <label for="message-text" class="form-control-label">Nowy opis</label>
                             <textarea class="form-control" id="message-text"
