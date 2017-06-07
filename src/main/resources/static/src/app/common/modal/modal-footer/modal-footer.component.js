@@ -10,9 +10,9 @@ class CommonModalController {
     }
 
     openLoginModal() {
-        this.modalInstance = this.$uibModal.open({
-            component: 'appLogin'
-        });
+        // this.modalInstance = this.$uibModal.open({
+        //     component: 'appLogin'
+        // });
     }
 
 }

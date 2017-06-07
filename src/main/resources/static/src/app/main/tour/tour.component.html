@@ -1,8 +1,36 @@
 <section id="tour-component">
-    <img ui-sref="tourGuide({ buildingID: 1 })" src="../../images/door.png" id="first" class="doors">
-    <img ui-sref="tourGuide({ buildingID: 2 })" src="../../images/door.png" id="second" class="doors">
-    <img ui-sref="tourGuide({ buildingID: 3 })" src="../../images/door.png" id="third" class="doors">
-    <img ui-sref="tourGuide({ buildingID: 4 })" src="../../images/door.png" id="fourth" class="doors">
-    <img src="../../images/makieta_3200dpi.png" id="makieta">
+    <div class="overlay-container" id="first">
+        <img src="../../images/door.png" class="doors">
+        <div class="overlay" ui-sref="tourGuide({ buildingID: 1 })">
+            <div class="text-middle">
+                Opis
+            </div>
+        </div>
+    </div>
+    <div class="overlay-container" id="second">
+        <img src="../../images/door.png" class="doors">
+        <div class="overlay" ui-sref="tourGuide({ buildingID: 2 })">
+            <div class="text-middle">
+                Opis
+            </div>
+        </div>
+    </div>
+    <div class="overlay-container" id="third">
+        <img src="../../images/door.png" class="doors">
+        <div class="overlay" ui-sref="tourGuide({ buildingID: 3 })">
+            <div class="text-middle">
+                Opis
+            </div>
+        </div>
+    </div>
+    <div class="overlay-container" id="fourth">
+        <img src="../../images/door.png" class="doors">
+        <div class="overlay" ui-sref="tourGuide({ buildingID: 4 })">
+            <div class="text-middle">
+                Opis
+            </div>
+        </div>
+    </div>
+    <img src="../../images/institution-model.png" class="full-width">
 </section>
 

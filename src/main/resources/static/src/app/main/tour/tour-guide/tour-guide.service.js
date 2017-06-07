@@ -1,4 +1,4 @@
-export class TourRepository {
+class TourGuideService {
 
     constructor($http) {
         this.$http = $http;
@@ -9,10 +9,11 @@ export class TourRepository {
     }
 
     editDescriptions(roomId, description, callback) {
-        this.$http.put('/description/' + roomId + "/" + description).then(callback)
+        this.$http.put('/description/' + roomId + '/' + description).then(callback)
     }
 }
 
-export default function ($http) {
-    return new TourRepository($http);
+export {
+    TourGuideService
 }
+
