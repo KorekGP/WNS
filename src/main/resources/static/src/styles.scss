@@ -9,7 +9,6 @@ html, body {
     background-color: white;
 }
 
-
 .m-b-sm {
     margin-bottom: 10px;
 }
@@ -20,6 +19,14 @@ html, body {
 
 .m {
     margin: 15px;
+}
+
+.m-md {
+    margin: 30px;
+}
+
+.m-lg {
+    margin: 60px;
 }
 
 .p {
@@ -54,7 +61,7 @@ html, body {
     opacity: 0;
     transition: .5s ease;
     cursor: pointer;
-    background-color: $color-primary-light;
+    background-color: $hover-accent;
 }
 
 .overlay-container {
@@ -63,11 +70,14 @@ html, body {
 }
 
 .text-middle {
-    color: white;
     font-size: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+}
+
+.new-line {
+    clear: both;
 }

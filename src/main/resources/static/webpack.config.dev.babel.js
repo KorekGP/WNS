@@ -1,5 +1,4 @@
 var Config = require('webpack-config').Config;
-import webpack from 'webpack';
 
 module.exports = new Config()
     .extend('./webpack.config.common.babel.js')
@@ -9,10 +8,7 @@ module.exports = new Config()
         },
         devtool: 'eval',
         entry: {
-            bundle: './index.js',
-            vendor: [
-                'angular'
-            ]
+            bundle: './index.js'
         },
         module: {
             rules: [{

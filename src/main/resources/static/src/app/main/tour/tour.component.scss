@@ -1,3 +1,5 @@
+@import "../../../variables";
+
 tour-guide > .row {
     padding: 30px;
 }
@@ -11,13 +13,8 @@ tour-guide > .row {
     padding: 1em;
 }
 
-#makieta {
-    width: 100%;
-    height: 400px;
-}
-
 .doors {
-    box-shadow: 15px 15px 15px;
+    box-shadow: 0 0 50px $hover-accent;
     width: 100%;
 }
 
@@ -37,6 +34,6 @@ tour-guide > .row {
 }
 
 #fourth {
-    margin-top: 11%;
+    margin-top: 20%;
     left: 75%;
 }

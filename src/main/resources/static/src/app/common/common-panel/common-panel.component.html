@@ -1,10 +1,10 @@
 <section id="{{panel.id}}" class="section-padding">
     <div ng-class="panel.fluid ? 'container-fluid': 'container'">
+        <div class="row text-center">
+            <h2>{{panel.title}}</h2>
+            <hr ng-class="{'light': panel.inverse}">
+        </div>
         <div class="row">
-            <div class="col-xs-12 text-center">
-                <h2>{{panel.title}}</h2>
-                <hr ng-class="{'light': panel.inverse}">
-            </div>
             <ng-transclude></ng-transclude>
         </div>
     </div>
