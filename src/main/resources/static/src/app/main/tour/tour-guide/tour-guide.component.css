@@ -1,8 +1,13 @@
-.carousel-container {
-    margin-top: 5%;
-    width: 30%;
+
+.carousel-image {
+    margin: auto;
+    height: 50em;
 }
 
-.edit-icon{
-    cursor: pointer;
+.panel-margin {
+    margin: 20px 160px;
+}
+
+.panel-heading > h3 {
+    text-align: left;
 }

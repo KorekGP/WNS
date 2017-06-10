@@ -1,16 +1,11 @@
 /**
- * Created by Grzegorz on 22.05.2017.
- */
-/**
  * Created by Grzegorz on 06.05.2017.
  */
 import tourGuide from './tour-guide.component';
 import tourComponent from './tour-guide.component';
-import commonModule from '../../../common/common.module';
-import * as moment from 'moment';
-import angularMomentModule from 'angular-moment';
-import TourRepository from './tour-guide.repo';
-
+import CommonModule from '../../../common/common.module';
+import {TourGuideService} from './tour-guide.service';
+import CarouselModule from 'angular-ui-bootstrap/src/carousel';
 
 function appRoutes($stateProvider) {
     $stateProvider.state('tourGuide', {
@@ -20,10 +15,10 @@ function appRoutes($stateProvider) {
 }
 
 export default angular.module('tour.guide', [
-    commonModule,
-    angularMomentModule,
+    CommonModule,
+    CarouselModule
 ])
     .component('tourGuide', tourComponent)
-    .factory('TourRepository', TourRepository)
+    .service('TourGuideService', TourGuideService)
     .config(appRoutes)
     .name;
