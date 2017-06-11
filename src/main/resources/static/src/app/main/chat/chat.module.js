@@ -7,7 +7,7 @@ import * as moment from 'moment';
 import angularMomentModule from 'angular-moment';
 import 'angular-simple-chat';
 import 'angular-simple-chat/dist/angular-simple-chat.min.css';
-import ChatRepository from './chat.repo.js';
+import {ChatRepository} from './chat.repo';
 
 const simpleChatModule = 'angular-simple-chat';
 
@@ -22,7 +22,7 @@ export default angular.module('app.chat', [
     simpleChatModule
 ])
     .component('appChat', appChat)
-    .factory('ChatRepository', ChatRepository)
+    .service('ChatRepository', ChatRepository)
     .run(momentInit)
     .run()
     .name;

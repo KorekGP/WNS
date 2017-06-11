@@ -16,6 +16,7 @@ function _redirectIfNotAuthenticated($q, $state, $timeout, $rootScope) {
     }).promise;
 }
 
+/*@ngInject*/
 function routeConfig($stateProvider) {
     $stateProvider.state(routeUrl, {
         url: '/admin',

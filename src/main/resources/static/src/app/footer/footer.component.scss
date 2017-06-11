@@ -11,14 +11,13 @@
     z-index: 100;
 }
 
-.footer-bigger-text {
+.footer-text {
     font-family: Tahoma, sans-serif;
-    font-size: 9pt;
+    font-size: 1em;
     color: white;
 }
 
 .footer-smaller-text {
-    font-family: Tahoma, sans-serif;
-    font-size: 8pt;
-    color: white;
+    @extend .footer-text;
+    font-size: 0.8em;
 }

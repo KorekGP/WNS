@@ -5,6 +5,7 @@ import html from './modal-body.component.html';
 
 class ModalBodyController {
 
+    /*@ngInject*/
     constructor($uibModal) {
         this.$uibModal = $uibModal;
     }

@@ -5,8 +5,7 @@ import appFaq from './faq.component.js';
 import commonModule from '../../common/common.module';
 import faqComponent from './faq.component';
 import angularMomentModule from 'angular-moment';
-import FaqRepository from './faq.repo';
-
+import {FaqRepository} from './faq.repo';
 
 function appRoutes($stateProvider) {
     $stateProvider.state('faq', {
@@ -20,6 +19,6 @@ export default angular.module('app.faq', [
     commonModule
 ])
     .component('appFaq', faqComponent)
-    .factory('FaqRepository', FaqRepository)
-    .config(appRoutes)
+    .service('FaqRepository', FaqRepository)
+    .config(/*@ngInject*/appRoutes)
     .name;

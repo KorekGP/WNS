@@ -9,6 +9,7 @@ const serviceUrl = '/user/';
 
 class UserManagerService {
 
+    /*@ngInject*/
     constructor($resource, $http) {
         this.$http = $http;
         this.User = $resource(acs.constructUrl(serviceUrl + ':userId'), {

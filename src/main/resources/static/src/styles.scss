@@ -66,7 +66,19 @@ html, body {
 
 .overlay-container {
     position: absolute;
-    width: 9em;
+    width: 5em;
+}
+
+@media (min-width: $screen-sm-min) {
+    .overlay-container {
+        width: 6em;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .overlay-container {
+        width: 8em;
+    }
 }
 
 .text-middle {

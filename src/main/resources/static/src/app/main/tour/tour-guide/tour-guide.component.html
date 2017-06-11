@@ -1,18 +1,33 @@
-<app-common-panel title="Pomieszczenia" id="rooms">
-    <div uib-carousel active="guide.controller.activeIndex" interval="guide.interval" no-wrap="false">
-        <div uib-slide ng-repeat="slide in guide.slidesStore track by slide.index" index="slide.index">
-            <img ng-src="{{slide.image}}" class="carousel-image">
-            <div class="panel panel-default panel-margin">
-                <div class="panel-heading">
-                    <app-edit-modal-wrapper text="slide.description"
-                                            callback="guide.editCallback(text)">
-                    </app-edit-modal-wrapper>
-                    <h3 class="modal-title">Opis</h3>
-                </div>
-                <div class="panel-body">
-                    <p>{{slide.description}}</p>
+<app-complete-modal title="Pomieszczenia" modal-instance="$ctrl.modalInstance">
+    <my-modal-body>
+        <div uib-carousel active="$ctrl.controller.activeIndex" interval="$ctrl.interval" no-wrap="false">
+            <div uib-slide ng-repeat="slide in $ctrl.slidesStore track by slide.index" index="slide.index">
+                <img ng-src="{{slide.image}}" class="carousel-image">
+                <div class="panel panel-default carousel-margin">
+                    <div class="panel-heading">
+                        <app-edit-modal-wrapper
+                            ng-if="$ctrl.authenticated"
+                            text="slide.description"
+                            callback="$ctrl.editCallback(text)">
+                        </app-edit-modal-wrapper>
+                        <h3 class="modal-title">Opis</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>{{slide.description}}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</app-common-panel>
+    </my-modal-body>
+    <my-modal-footer>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-3 pull-right">
+                    <button type="button" class="btn btn-secondary full-width" ng-click="$ctrl.modalInstance.close()">
+                        Zamknij
+                    </button>
+                </div>
+            </div>
+        </form>
+    </my-modal-footer>
+</app-complete-modal>
