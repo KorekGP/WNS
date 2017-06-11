@@ -2,23 +2,21 @@
  * Created by Grzegorz on 22.05.2017.
  */
 import tourGuideHtml from './tour-guide.component.html';
-import './tour-guide.component.css';
+import './tour-guide.component.scss';
 import {SlidesStore} from './slides.store';
 
 class TourGuideController {
 
-    constructor($stateParams, TourGuideService, $rootScope) {
-        this.buildingID = $stateParams.buildingID;
-        this.slidesStore = SlidesStore[this.buildingID];
+    /*@ngInject*/
+    constructor(TourGuideService, $rootScope) {
         this.authenticated = $rootScope.authenticated;
         this.tourService = TourGuideService;
         this.id = null;
     }
 
     $onInit() {
-        this.controller = {};
-        this.controller.activeIndex = 0;
-        this.interval = 10000;
+        this.slidesStore = SlidesStore[this.resolve.buildingId];
+        this.activeIndex = 0;
         this.getDescription();
     }
 
@@ -35,10 +33,6 @@ class TourGuideController {
         }
     }
 
-    setProperId(id) {
-        this.id = id;
-    }
-
     editCallback(text) {
         this.tourService.editDescriptions(this.getId(), text, () => {
             this.getDescription();
@@ -51,8 +45,11 @@ class TourGuideController {
 
 }
 
-export default {
+export const TourGuideModalComponent = {
+    bindings: {
+        resolve: '<',
+        modalInstance: '<'
+    },
     template: tourGuideHtml,
-    controller: TourGuideController,
-    controllerAs: 'guide'
+    controller: TourGuideController
 };

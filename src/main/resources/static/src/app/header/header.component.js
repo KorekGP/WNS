@@ -8,6 +8,7 @@ import {routeUrl} from '../admin/admin.routes';
 
 class HeaderController {
 
+    /*@ngInject*/
     constructor($uibModal, $state, LoginService) {
         this.chat = true;
         this.navCollapsed = true;

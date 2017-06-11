@@ -1,7 +1,7 @@
 <section id="tour-component">
     <div class="overlay-container" id="first">
         <img src="../../images/door.png" class="doors">
-        <div class="overlay" ui-sref="tourGuide({ buildingID: 1 })">
+        <div class="overlay" ng-click="$ctrl.openGuideModal(1)">
             <div class="text-middle">
                 Opis
             </div>
@@ -9,7 +9,7 @@
     </div>
     <div class="overlay-container" id="second">
         <img src="../../images/door.png" class="doors">
-        <div class="overlay" ui-sref="tourGuide({ buildingID: 2 })">
+        <div class="overlay" ng-click="$ctrl.openGuideModal(2)">
             <div class="text-middle">
                 Opis
             </div>
@@ -17,7 +17,7 @@
     </div>
     <div class="overlay-container" id="third">
         <img src="../../images/door.png" class="doors">
-        <div class="overlay" ui-sref="tourGuide({ buildingID: 3 })">
+        <div class="overlay" ng-click="$ctrl.openGuideModal(3)">
             <div class="text-middle">
                 Opis
             </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="overlay-container" id="fourth">
         <img src="../../images/door.png" class="doors">
-        <div class="overlay" ui-sref="tourGuide({ buildingID: 4 })">
+        <div class="overlay" ng-click="$ctrl.openGuideModal(4)">
             <div class="text-middle">
                 Opis
             </div>

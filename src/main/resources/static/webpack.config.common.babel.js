@@ -1,5 +1,4 @@
 var Config = require('webpack-config').Config;
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var webpack = require('webpack');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -39,12 +38,6 @@ module.exports = new Config().merge({
             root: path.join(process.cwd(), '..'),
             verbose: true,
             dry: false
-        }),
-        new HtmlWebpackPlugin({
-            title: 'Wydział Nauk Społecznych - Wirtualny spacer',
-            template: 'index.ejs',
-            favicon: 'favicon.ico',
-            inject: 'body'
         }),
         new webpack.ProvidePlugin({
             moment: 'moment'

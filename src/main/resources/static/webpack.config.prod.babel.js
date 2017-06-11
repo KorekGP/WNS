@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var path = require('path');
 var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const nodeModules = path.join(process.cwd(), 'node_modules');
 
@@ -12,6 +13,7 @@ module.exports = new Config().extend('./webpack.config.common.babel.js').merge({
         pathinfo: true,
         filename: '[name].[hash].js'
     },
+    devtool: 'no-sources-sourcemap',
     module: {
         rules: [{
             test: /\.scss$/,
@@ -46,15 +48,11 @@ module.exports = new Config().extend('./webpack.config.common.babel.js').merge({
         }]
     },
     plugins: [
-        // new webpack.optimize.CommonsChunkPlugin('common.js'),
         new webpack.optimize.OccurrenceOrderPlugin(true),
         new webpack.optimize.AggressiveMergingPlugin(),
-        new NgAnnotatePlugin({
-            add: true
-        }),
+        new NgAnnotatePlugin(),
         new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            mangle: false
+            sourceMap: true
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
@@ -63,6 +61,12 @@ module.exports = new Config().extend('./webpack.config.common.babel.js').merge({
                 'main'
             ]
         }),
-        new ExtractTextPlugin('[name].[hash].css')
+        new ExtractTextPlugin('[name].[hash].css'),
+        new HtmlWebpackPlugin({
+            title: 'Wydział Nauk Społecznych - Wirtualny spacer',
+            template: 'index.prod.ejs',
+            favicon: 'favicon.ico',
+            inject: 'body'
+        })
     ]
 });

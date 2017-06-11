@@ -5,6 +5,7 @@ import html from './edit-modal-wrapper.component.html';
 
 class EditModalWrapperController {
 
+    /*@ngInject*/
     constructor($uibModal) {
         this.$uibModal = $uibModal;
     }

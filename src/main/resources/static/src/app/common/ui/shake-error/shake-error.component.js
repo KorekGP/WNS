@@ -9,6 +9,7 @@ const ANIMATION_DURATION = 500;
 
 class ShakeErrorController {
 
+    /*@ngInject*/
     constructor($timeout) {
         this.shakeError = {};
         this.$timeout = $timeout;

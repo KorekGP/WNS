@@ -3,7 +3,7 @@
  */
 import './index.js';
 
-angular.module('app').config(($compileProvider) => {
+angular.module('app').config(/*@ngInject*/($compileProvider) => {
     $compileProvider.debugInfoEnabled(false);
     $compileProvider.commentDirectivesEnabled(false);
     $compileProvider.cssClassDirectivesEnabled(false);

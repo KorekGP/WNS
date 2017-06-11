@@ -6,6 +6,7 @@ import './chat.component.scss';
 
 class chatController {
 
+    /*@ngInject*/
     constructor(ChatRepository, $interval) {
         this.chatRepository = ChatRepository;
         this.messages = {};

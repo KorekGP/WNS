@@ -1,5 +1,6 @@
-export class FaqRepository {
+class FaqRepository {
 
+    /*@ngInject*/
     constructor($http) {
         this.$http = $http;
     }
@@ -18,6 +19,6 @@ export class FaqRepository {
 
 }
 
-export default function ($http) {
-    return new FaqRepository($http);
+export {
+    FaqRepository
 }

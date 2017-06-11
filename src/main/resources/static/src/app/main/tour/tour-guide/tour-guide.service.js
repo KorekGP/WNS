@@ -1,5 +1,6 @@
 class TourGuideService {
 
+    /*@ngInject*/
     constructor($http) {
         this.$http = $http;
     }
