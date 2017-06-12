@@ -35,6 +35,7 @@ public class ChatMessageController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity addMessage(@RequestBody ChatMessage message) {
+        message.setId(null);
         chatMessageServiceImpl.addMessage(message);
         return new ResponseEntity(HttpStatus.OK);
     }

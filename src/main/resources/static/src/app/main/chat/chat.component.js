@@ -3,35 +3,48 @@
  */
 import chatHtml from './chat.component.html';
 import './chat.component.scss';
+import {ChatMessage} from './message.model';
 
-class chatController {
+const CHECK_MESSAGE_INTERVAL = 5000;
+
+class ChatController {
 
     /*@ngInject*/
-    constructor(ChatRepository, $interval) {
-        this.chatRepository = ChatRepository;
-        this.messages = {};
-        this.getMessages();
-        $interval(() => {
-            this.getMessages()
-        }, 4000);
+    constructor(ChatService, $interval, UserService) {
+        this.chatService = ChatService;
+        this.userService = UserService;
+        this.$interval = $interval;
+        this.me = null;
+        this.messages = [];
+        this.sendMessage = message => {
+            this.chatService.sendMessage(message, () => {
+                this.getMessages();
+            });
+        };
+    }
+
+    $onInit() {
+        this.userService.userPromise.then(userHash => {
+            this.me = {
+                userId: userHash,
+                userName: 'Anonimowy'
+            };
+            this.getMessages();
+            this.$interval(() => {
+                this.getMessages()
+            }, CHECK_MESSAGE_INTERVAL);
+        });
     }
 
     getMessages() {
-        this.chatRepository.getMessages((data) => {
-            this.messages = data.data;
+        this.chatService.getMessages((response) => {
+            this.messages = ChatMessage.getMessagesFromArr(response.data);
         });
     }
 
-    sendMessage() {
-        this.chatRepository.sendMessages(this.content, (data) => {
-            this.content = '';
-            this.getMessages();
-        });
-    }
 }
 
-export default {
+export const ChatComponent = {
     template: chatHtml,
-    controller: chatController,
-    controllerAs: 'chatCtrl'
+    controller: ChatController,
 };
