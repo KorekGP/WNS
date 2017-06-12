@@ -9,8 +9,8 @@ class TourGuideService {
         this.$http.get('/description').then(callback);
     }
 
-    editDescriptions(roomId, description, callback) {
-        this.$http.put('/description/' + roomId + '/' + description).then(callback)
+    editDescriptions(roomId, description, link, callback) {
+        this.$http.put('/description/' + roomId + '/' + description + "/" + link).then(callback)
     }
 }
 

@@ -8,7 +8,6 @@ import pl.edu.amu.wmi.students.wns.exceptions.NotFoundException;
 import pl.edu.amu.wmi.students.wns.model.Description;
 import pl.edu.amu.wmi.students.wns.service.DescriptionServiceImpl;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -19,6 +18,7 @@ import java.util.List;
 @RequestMapping(value = "/description")
 public class DescriptionController {
 
+    
     @Autowired
     private DescriptionServiceImpl descriptionServiceImpl;
 
@@ -46,10 +46,11 @@ public class DescriptionController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/{roomId}/{newDescription}")
-    public ResponseEntity editDescription(@PathVariable String roomId, @PathVariable String newDescription) {
+    @RequestMapping(method = RequestMethod.PUT, value = "/{roomId}/{newDescription}/{link}")
+    public ResponseEntity editDescription(@PathVariable String roomId, @PathVariable String newDescription, @PathVariable(required = false) String link) {
         Description description = descriptionServiceImpl.getDescription(Long.valueOf(roomId));
         description.setDescription(newDescription);
+        description.setLink(link);
         descriptionServiceImpl.editDescription(description);
         return new ResponseEntity(HttpStatus.OK);
     }

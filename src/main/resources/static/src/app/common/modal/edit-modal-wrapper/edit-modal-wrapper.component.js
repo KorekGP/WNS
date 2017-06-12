@@ -14,12 +14,13 @@ class EditModalWrapperController {
         this.modalInstance = this.$uibModal.open({
             component: 'appEditModal',
             resolve: {
-                text: () => this.text
+                text: () => this.text,
+                link: () => this.link
             }
         });
-        this.modalInstance.result.then((text) => {
-            if (text || text === '') {
-                this.callback({text});
+        this.modalInstance.result.then((text, link) => {
+            if ((text || text === '')) {
+                this.callback({text},{link});
             }
         });
     }
@@ -29,7 +30,8 @@ class EditModalWrapperController {
 export const EditModalWrapperComponent = {
     bindings: {
         callback: '&',
-        text: '<'
+        text: '<',
+        link: '<'
     },
     controller: EditModalWrapperController,
     template: html,

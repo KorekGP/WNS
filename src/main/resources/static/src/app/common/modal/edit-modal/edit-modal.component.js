@@ -12,6 +12,7 @@ class EditModalController {
 
     $onInit() {
         this.text = this.resolve.text;
+        this.link = this.resolve.link;
     }
 
     close() {
@@ -19,7 +20,7 @@ class EditModalController {
     }
 
     save() {
-        this.modalInstance.close(this.text)
+        this.modalInstance.close(this.text, this.link)
     }
 
 }

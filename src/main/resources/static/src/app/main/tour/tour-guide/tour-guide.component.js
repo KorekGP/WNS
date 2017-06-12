@@ -8,7 +8,8 @@ import {SlidesStore} from './slides.store';
 class TourGuideController {
 
     /*@ngInject*/
-    constructor(TourGuideService, $rootScope) {
+    constructor(TourGuideService, $rootScope, $sce) {
+        this.$sce = $sce;
         this.authenticated = $rootScope.authenticated;
         this.tourService = TourGuideService;
         this.id = null;
@@ -18,6 +19,11 @@ class TourGuideController {
         this.slidesStore = SlidesStore[this.resolve.buildingId];
         this.activeIndex = 0;
         this.getDescription();
+    }
+
+    getProperVideoId(link) {
+        this.result = link.match(/=.+/);
+        return this.$sce.trustAsResourceUrl("https://www.youtube.com/embed/" + this.result.toString().substring(1));
     }
 
     getDescription() {
@@ -30,11 +36,12 @@ class TourGuideController {
     assignStore(descriptionData) {
         for (const slide of this.slidesStore) {
             slide.description = descriptionData[slide.id].description;
+            slide.link = this.getProperVideoId(descriptionData[slide.id].link);
         }
     }
 
-    editCallback(text) {
-        this.tourService.editDescriptions(this.getId(), text, () => {
+    editCallback(text, link) {
+        this.tourService.editDescriptions(this.getId(), text, link, () => {
             this.getDescription();
         });
     }
