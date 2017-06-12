@@ -2,7 +2,7 @@
  * Created by eryk on 31.03.17.
  */
 import appMain from './main.component';
-import appTour from './tour/tour.component';
+import {TourComponent} from './tour/tour.component';
 import appTourInfo from './tour/tour-info/tour-info.component';
 import appDescription from './description/description.component';
 import uiRouter from '@uirouter/angularjs';
@@ -11,7 +11,6 @@ import chatModule from './chat/chat.module';
 import {init} from '../common/service/LocalStorageManager.js';
 
 function appRoutes($stateProvider, $urlRouterProvider) {
-    'use strict';
     $urlRouterProvider.when('', '/app');
     $urlRouterProvider.when('/', '/app');
 
@@ -19,7 +18,6 @@ function appRoutes($stateProvider, $urlRouterProvider) {
         url: '/app',
         component: 'appMain'
     });
-
 }
 
 export default angular.module('app.main', [
@@ -28,8 +26,8 @@ export default angular.module('app.main', [
     chatModule
 ])
     .component('appMain', appMain)
-    .component('appTour', appTour)
+    .component('appTour', TourComponent)
     .component('appDescription', appDescription)
     .component('appTourInfo', appTourInfo)
-    .config(appRoutes)
+    .config(/*@ngInject*/appRoutes)
     .run(init).name;

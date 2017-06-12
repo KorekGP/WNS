@@ -11,6 +11,7 @@ const WRONG_PASS_MSG = 'Błędny login lub hasło';
 
 class LoginModalController {
 
+    /*@ngInject*/
     constructor($state, LoginService) {
         this.credentials = {};
         this.shakeError = {};

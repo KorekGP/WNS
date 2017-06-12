@@ -9,7 +9,7 @@ import completeModal from './complete-modal/complete-modal.component';
 import {EditModalComponent} from './edit-modal/edit-modal.component';
 import {EditModalWrapperComponent} from './edit-modal-wrapper/edit-modal-wrapper.component';
 
-export default angular.module('app.common.modal', [
+export const CommonModalModule = angular.module('app.common.modal', [
     uibModal
 ])
     .component('appEditModalWrapper', EditModalWrapperComponent)

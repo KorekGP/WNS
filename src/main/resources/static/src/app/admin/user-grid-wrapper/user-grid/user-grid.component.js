@@ -14,6 +14,7 @@ const HEADER_HEIGHT = 36;
 
 class UserGridController {
 
+    /*@ngInject*/
     constructor() {
         this.gridOptions = {
             rowHeight: ROW_HEIGHT,

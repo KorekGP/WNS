@@ -6,6 +6,7 @@ const USER_KEY = 'user';
 
 let user = null;
 
+/*@ngInject*/
 function init($rootScope, $state) {
     user = localStorage.getItem(USER_KEY);
     $rootScope.authenticated = !!user;

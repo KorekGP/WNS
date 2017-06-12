@@ -6,6 +6,7 @@ import './faq.component.scss';
 
 class faqController {
 
+    /*@ngInject*/
     constructor(FaqRepository, $rootScope) {
 
         this.authenticated = $rootScope.authenticated;
@@ -24,16 +25,17 @@ class faqController {
     }
 
     sendFaq() {
-        this.faqRepository.sendFaq(this.title, this.description, (data) => {
+        this.faqRepository.sendFaq(this.title, this.description,
+            () => {
                 this.title = '';
                 this.description = '';
                 this.getFaqs();
             },
-            (err) => {
+            () => {
                 this.title = '';
                 this.description = '';
-            });
-
+            }
+        );
     }
 }
 export default {

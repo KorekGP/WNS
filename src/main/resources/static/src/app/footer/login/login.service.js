@@ -9,6 +9,7 @@ const loginHeader = {
 
 class LoginService {
 
+    /*@ngInject*/
     constructor($http, $rootScope, $state) {
         this.$http = $http;
         this.$rootScope = $rootScope;

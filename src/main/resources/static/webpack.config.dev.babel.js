@@ -1,4 +1,5 @@
 var Config = require('webpack-config').Config;
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = new Config()
     .extend('./webpack.config.common.babel.js')
@@ -38,6 +39,14 @@ module.exports = new Config()
                     }
                 }]
             }]
-        }
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                title: 'Wydział Nauk Społecznych - Wirtualny spacer',
+                template: 'index.ejs',
+                favicon: 'favicon.ico',
+                inject: 'body'
+            }),
+        ]
     });
 

@@ -5,6 +5,7 @@ import html from './modal-footer.component.html';
 
 class CommonModalController {
 
+    /*@ngInject*/
     constructor($uibModal) {
         this.$uibModal = $uibModal;
     }

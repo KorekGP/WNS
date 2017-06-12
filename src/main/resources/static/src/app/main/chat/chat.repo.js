@@ -2,8 +2,9 @@
  * Created by Grzegorz on 23.05.2017.
  */
 
-export class ChatRepository {
+class ChatRepository {
 
+    /*@ngInject*/
     constructor($http) {
         this.$http = $http;
     }
@@ -21,6 +22,6 @@ export class ChatRepository {
 
 }
 
-export default function ($http) {
-    return new ChatRepository($http);
-}
+export {
+    ChatRepository
+};
