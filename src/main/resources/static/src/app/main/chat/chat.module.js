@@ -2,12 +2,13 @@
  * Created by eryk on 17.05.17.
  */
 import commonModule from '../../common/common.module';
-import appChat from './chat.component';
+import {ChatComponent} from './chat.component';
 import * as moment from 'moment';
 import angularMomentModule from 'angular-moment';
 import 'angular-simple-chat';
 import 'angular-simple-chat/dist/angular-simple-chat.min.css';
-import {ChatRepository} from './chat.repo';
+import {ChatService} from './chat.service';
+import {UserService} from '../../common/service/UserService';
 
 const simpleChatModule = 'angular-simple-chat';
 
@@ -21,8 +22,9 @@ export default angular.module('app.chat', [
     commonModule,
     simpleChatModule
 ])
-    .component('appChat', appChat)
-    .service('ChatRepository', ChatRepository)
+    .component('appChat', ChatComponent)
+    .service('ChatService', ChatService)
+    .service('UserService', UserService)
     .run(momentInit)
     .run()
     .name;
