@@ -11,7 +11,8 @@
     "unit": "cross-env NODE_ENV=test babel-node --presets es2015 -- ./node_modules/karma/bin/karma start karma.conf.js",
     "start": "webpack-dev-server --config webpack.config.dev.babel.js --inline --hot --port 4200",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.babel.js --progress -p",
-    "dev": "webpack --watch --config webpack.config.dev.babel.js --progress"
+    "dev": "webpack --watch --config webpack.config.dev.babel.js --progress",
+    "fake-server": "json-server --watch json-server.json --port 8080"
   },
   "author": "Eryk Mariankowski",
   "repository": {
@@ -41,6 +42,7 @@
     "angular-ui-bootstrap": "^2.5.0",
     "animate.css": "^3.5.2",
     "babel-polyfill": "^6.23.0",
+    "blueimp-md5": "^2.7.0",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "moment": "^2.18.1"
@@ -65,6 +67,7 @@
     "html-webpack-plugin": "^2.28.0",
     "jasmine-core": "^2.6.1",
     "json-loader": "^0.5.4",
+    "json-server": "^0.10.1",
     "karma": "^1.6.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",

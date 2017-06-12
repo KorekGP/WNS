@@ -1,58 +1,30 @@
 @import "../../../variables";
+@import "../../../../node_modules/bootstrap/dist/css/bootstrap.css";
 
-.chatbox {
-    width: 300px;
+message-composer > form > button {
+    width: 10em;
 }
 
-.chat-window {
+#chat-container {
     position: fixed;
+    height: 500px;
+    margin-right: 10px;
     right: 0;
-    bottom: 52px;
-    background-color: lightgray;
-    padding: 10px;
-    z-index: 100;
-    overflow-y: auto;
-    max-height: 200px;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1;
 }
 
-.chat-message {
-    background-color: $color-primary;
-    border-radius: 10px;
-    color: white;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-.chat-textbox {
-    width: 236px;
-    border: none;
-    padding: 5px;
-    margin-right: 0;
-    position: relative;
-    left: 3px;
-}
-
-.chat-button {
-    background-color: $color-primary;
-    color: white;
-    border: none;
-    padding: 5px;
-}
-
-@media (max-width: 807px) {
-    .chat-window {
-        bottom: 69px;
+@media (min-width: $screen-sm-min) {
+    #chat-container {
+        width: 500px;
+        bottom: 75px;
     }
 }
 
-@media (max-width: 604px) {
-    .chat-window {
-        bottom: 84px;
-    }
-}
-
-@media (max-width: 430px) {
-    .chat-window {
-        bottom: 101px;
+@media (min-width: $screen-md-min) {
+    #chat-container {
+        width: 500px;
+        bottom: 52px;
     }
 }

@@ -1,9 +1,10 @@
-<div class="chat-window">
-    <div class="chatbox">
-        <div ng-repeat="message in chatCtrl.messages" class="chat-message">
-            {{message.content}}
-        </div>
-    </div>
-    <input type="text" ng-model="chatCtrl.content" class="chat-textbox">
-    <input type="submit" value="WYŚLIJ" ng-click="chatCtrl.sendMessage()" class="chat-button">
+<div id="chat-container">
+    <simple-chat
+        ng-if="$ctrl.me.userId"
+        messages="$ctrl.messages"
+        local-user="$ctrl.me"
+        show-user-avatar="true"
+        send-function="$ctrl.sendMessage"
+        send-button-text="Wyślij"
+        composer-placeholder-text="Napisz, aby zadać pytanie przewodnikowi"></simple-chat>
 </div>
