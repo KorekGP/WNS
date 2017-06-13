@@ -5,7 +5,7 @@
             <div class="navbar-faculty">Wydział Nauk Społecznych</div>
         </a>
         <div class="navbar-icons">
-            <div class="navbar-icon" ng-click="headerCtrl.openLoginModal()">
+            <div class="navbar-icon" ng-if="$root.authenticated == false" ng-click="headerCtrl.openLoginModal()">
                 <img src="../images/login.svg">Zaloguj
             </div>
             <div class="navbar-icon" ng-click="headerCtrl.openChat()">
@@ -15,7 +15,7 @@
                 <img src="../images/faq.svg">FAQ
             </div>
             <div class="navbar-icon" ng-if="$root.authenticated" ng-click="headerCtrl.openAdmin()">
-                <i class="fa fa-2x fa-lock"></i>Panel administracyjny
+                <i class="fa fa-2x fa-lock"></i>Panel
             </div>
             <div class="navbar-icon" ng-if="$root.authenticated" ng-click="headerCtrl.logout()">
                 <i class="fa fa-2x fa-sign-out"></i>Wyloguj

@@ -10,7 +10,8 @@ const CHECK_MESSAGE_INTERVAL = 5000;
 class ChatController {
 
     /*@ngInject*/
-    constructor(ChatService, $interval, UserService) {
+    constructor(ChatService, $interval, UserService, $rootScope) {
+        this.$rootScope = $rootScope;
         this.chatService = ChatService;
         this.userService = UserService;
         this.$interval = $interval;
@@ -25,10 +26,17 @@ class ChatController {
 
     $onInit() {
         this.userService.userPromise.then(userHash => {
-            this.me = {
-                userId: userHash,
-                userName: 'Anonimowy'
-            };
+            if (this.$rootScope.authenticated) {
+                this.me = {
+                    userId: userHash,
+                    userName: 'Przewodnik'
+                };
+            } else {
+                this.me = {
+                    userId: userHash,
+                    userName: 'Anonimowy'
+                };
+            }
             this.getMessages();
             this.$interval(() => {
                 this.getMessages()
