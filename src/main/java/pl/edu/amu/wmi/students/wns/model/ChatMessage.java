@@ -18,12 +18,4 @@ public class ChatMessage {
     private String text;
     private String userName;
     private String date;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
