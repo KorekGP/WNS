@@ -7,6 +7,7 @@ message-composer > form > button {
 
 #chat-container {
     position: fixed;
+    width: 300px;
     height: 500px;
     margin-right: 10px;
     right: 0;
@@ -17,14 +18,13 @@ message-composer > form > button {
 
 @media (min-width: $screen-sm-min) {
     #chat-container {
-        width: 500px;
         bottom: 75px;
+        width: 500px;
     }
 }
 
 @media (min-width: $screen-md-min) {
     #chat-container {
-        width: 500px;
         bottom: 52px;
     }
 }

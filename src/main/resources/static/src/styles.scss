@@ -50,7 +50,7 @@ html, body {
 }
 
 .overlay {
-    border-radius: 2em;
+    border-radius: 50%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -71,13 +71,13 @@ html, body {
 
 @media (min-width: $screen-sm-min) {
     .overlay-container {
-        width: 6em;
+        width: 7em;
     }
 }
 
 @media (min-width: $screen-md-min) {
     .overlay-container {
-        width: 8em;
+        width: 12em;
     }
 }
 
