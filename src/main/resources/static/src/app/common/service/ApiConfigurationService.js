@@ -2,7 +2,7 @@
  * Created by eryk on 28.04.17.
  */
 
-const API_URL = 'localhost:8080/api/';
+const API_URL = 'api/';
 
 class ApiConfigurationService {
 
