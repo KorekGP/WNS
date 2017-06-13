@@ -15,15 +15,21 @@ const HEADER_HEIGHT = 36;
 class UserGridController {
 
     /*@ngInject*/
-    constructor() {
+    constructor($uibModal) {
         this.gridOptions = {
             rowHeight: ROW_HEIGHT,
             headerHeight: HEADER_HEIGHT,
             columnDefs: userGridColumn,
             rowData: userGridStub
-        }
+        };
+        this.$uibModal = $uibModal;
     }
 
+    openRegisterUserModal() {
+        this.$uibModal.open({
+            component: 'registerUserModal',
+        });
+    }
 }
 
 

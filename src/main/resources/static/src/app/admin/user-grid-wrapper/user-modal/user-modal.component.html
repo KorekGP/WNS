@@ -1,1 +1,77 @@
-<h1>Admin</h1>
+<app-complete-modal id="user-modal" title="Rejestracja nowego użytkownika" modal-instance="modal.modalInstance">
+    <my-modal-body>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input ng-model="user.username"
+                           id="username"
+                           name="username"
+                           class="form-control"
+                           placeholder="Nazwa użytkownika"
+                           required=""
+                           maxlength="30">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input ng-model="user.email"
+                           id="email"
+                           name="email"
+                           class="form-control"
+                           placeholder="E-mail"
+                           required=""
+                           maxlength="30">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input ng-model="user.password"
+                           id="password"
+                           name="password"
+                           type="password"
+                           class="form-control"
+                           placeholder="Hasło"
+                           required=""
+                           maxlength="30">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <select ng-model="user.userRole"
+                            id="userRole"
+                            name="userRole"
+                            class="form-control"
+                            required="">
+                        <option>Administrator</option>
+                        <option>Przewodnik</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input ng-model="user.enabled"
+                           id="enabled"
+                           name="enabled"
+                           class="form-control"
+                           placeholder="Aktywny"
+                           required=""
+                           maxlength="30">
+                </div>
+            </div>
+        </form>
+    </my-modal-body>
+    <my-modal-footer>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-3 pull-right">
+                    <button id="loginButton"
+                            type="submit"
+                            class="btn btn-primary block full-width"
+                            ng-click="user.register()">
+                        Zarejestruj
+                    </button>
+                </div>
+            </div>
+        </form>
+    </my-modal-footer>
+</app-complete-modal>
