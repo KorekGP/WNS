@@ -17,14 +17,24 @@ class TourGuideController {
 
     $onInit() {
         this.slidesStore = SlidesStore[this.resolve.buildingId];
+        this.allSlides = this.allSlides();
         this.activeIndex = 0;
         this.getDescription();
     }
 
     getProperVideoId(link) {
-        this.result = link.match(/=.+/);
-        return this.$sce.trustAsResourceUrl("https://www.youtube.com/embed/" + this.result.toString().substring(1));
+        if (link) {
+            return this.$sce.trustAsResourceUrl(link);
+        }
     }
+
+    allSlides() {
+        return SlidesStore[1]
+            .concat(SlidesStore[2])
+            .concat(SlidesStore[3])
+            .concat(SlidesStore[4]);
+    }
+
 
     getDescription() {
         this.tourService.getDescriptions((data) => {
@@ -34,20 +44,33 @@ class TourGuideController {
     }
 
     assignStore(descriptionData) {
-        for (const slide of this.slidesStore) {
-            slide.description = descriptionData[slide.id].description;
-            slide.link = this.getProperVideoId(descriptionData[slide.id].link);
+        for (const description of descriptionData) {
+            const slide = this.getSlideById(description.id);
+            slide.description = description.description;
+            slide.link = this.getProperVideoId(description.link);
         }
     }
 
     editCallback(text, link) {
-        this.tourService.editDescriptions(this.getId(), text, link, () => {
+        this.tourService.editDescriptions(this.getCurrentSlide().id, text, link, () => {
             this.getDescription();
         });
     }
 
-    getId() {
-        return this.slidesStore[this.controller.activeIndex].id
+    getCurrentSlide() {
+        for (const slide of this.slidesStore) {
+            if (slide.index === this.controller.activeIndex) {
+                return slide;
+            }
+        }
+    }
+
+    getSlideById(id) {
+        for (const slide of this.allSlides) {
+            if (slide.id === id) {
+                return slide;
+            }
+        }
     }
 
 }

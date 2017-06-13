@@ -11,7 +11,7 @@ import pl.edu.amu.wmi.students.wns.service.ChatMessageServiceImpl;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/chat")
+@RequestMapping(value = "/api/chat")
 public class ChatMessageController {
 
     @Autowired

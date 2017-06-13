@@ -1,6 +1,6 @@
 @import "../../../variables";
 
-tour-guide > .row {
+.tour-guide > .row {
     padding: 30px;
 }
 
@@ -9,12 +9,9 @@ tour-guide > .row {
     min-width: 100%;
 }
 
-#tour-component > .overlay-container {
-    padding: 1em;
-}
-
 .doors {
     box-shadow: 0 0 50px $hover-accent;
+    border-radius: 50%;
     width: 100%;
 }
 

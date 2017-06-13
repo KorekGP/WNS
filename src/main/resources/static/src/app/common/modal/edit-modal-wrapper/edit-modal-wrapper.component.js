@@ -20,7 +20,7 @@ class EditModalWrapperController {
         });
         this.modalInstance.result.then((text, link) => {
             if ((text || text === '')) {
-                this.callback({text},{link});
+                this.callback(text, link);
             }
         });
     }
