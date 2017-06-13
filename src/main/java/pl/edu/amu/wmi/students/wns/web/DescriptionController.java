@@ -46,11 +46,8 @@ public class DescriptionController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/{roomId}/{newDescription}/{link}")
-    public ResponseEntity editDescription(@PathVariable String roomId, @PathVariable String newDescription, @PathVariable(required = false) String link) {
-        Description description = descriptionServiceImpl.getDescription(Long.valueOf(roomId));
-        description.setDescription(newDescription);
-        description.setLink(link);
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity editDescription(@RequestBody Description description) {
         descriptionServiceImpl.editDescription(description);
         return new ResponseEntity(HttpStatus.OK);
     }

@@ -20,7 +20,10 @@ class EditModalController {
     }
 
     save() {
-        this.modalInstance.close(this.text, this.link)
+        this.modalInstance.close({
+            text: this.text,
+            link: this.link
+        })
     }
 
 }
