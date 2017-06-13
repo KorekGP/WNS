@@ -18,6 +18,9 @@ class ChatController {
         this.me = null;
         this.messages = [];
         this.sendMessage = message => {
+            if(this.$rootScope.authenticated){
+                message.userName = "Przewodnik";
+            }
             this.chatService.sendMessage(message, () => {
                 this.getMessages();
             });
@@ -26,17 +29,10 @@ class ChatController {
 
     $onInit() {
         this.userService.userPromise.then(userHash => {
-            if (this.$rootScope.authenticated) {
-                this.me = {
-                    userId: userHash,
-                    userName: 'Przewodnik'
-                };
-            } else {
-                this.me = {
-                    userId: userHash,
-                    userName: 'Anonimowy'
-                };
-            }
+            this.me = {
+                userId: userHash,
+                userName: 'Anonimowy'
+            };
             this.getMessages();
             this.$interval(() => {
                 this.getMessages()
